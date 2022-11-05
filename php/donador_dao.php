@@ -16,30 +16,26 @@
 
            if(mysqli_query($this->conexion->getConexion(), $sql)){
                //echo "<script> alert('Agregado con EXITO'); </script>"
-               header("location:../vista/formulario_altas.php");
            } else{
                 //echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA?   :(";
-                echo mysqli_error($this->conexion->getConexion());
            }
         }
 
         //----------------------------BAJAS-------------------------
         public function eliminarAlumno($id){
-            $sql = "DELETE FROM alumnos WHERE id ='$id'";
+            $sql = "DELETE FROM donadores WHERE id ='$id'";
 
            if(mysqli_query($this->conexion->getConexion(), $sql)){
-               //echo "PERFECTO, CASI SOY ISC :)";
+               echo "PERFECTO, CASI SOY ISC :)";
                //echo "<script> alert('Agregado con EXITO'); </script>"
-               header("location:../vista/formulario_consultas.php");
            } else{
                 //echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA?   :(";
-                echo mysqli_error($this->conexion->getConexion());
            }
         }
 
         //----------------------------CAMBIOS-------------------------
         public function guardarCambiosAlumno($nc, $no, $pa, $sa, $ed, $se, $ca){
-            $sql = "UPDATE alumnos SET nombre='$no', primer_ap='$pa', segundo_ap='$sa', edad=$ed, semestre=$se, carrera='$ca' WHERE num_control='$nc'";
+            $sql = "UPDATE donadores SET nombre='$no', primer_ap='$pa', edad=$ed, semestre=$se, carrera='$ca' WHERE num_control='$nc'";
             
             if(mysqli_query($this->conexion->getConexion(), $sql)){
                 //echo "PERFECTO, CASI SOY ISC :)";
@@ -52,8 +48,8 @@
         }
 
         //----------------------------CONSULTAS-------------------------
-        public function cargarAlumnos(){
-            $sql = "SELECT * FROM Alumnos";
+        public function cargarDonadores(){
+            $sql = "SELECT * FROM donadores;";
 
            return mysqli_query($this->conexion->getConexion(), $sql);
         }
