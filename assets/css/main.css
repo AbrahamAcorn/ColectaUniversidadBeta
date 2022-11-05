@@ -1,0 +1,73 @@
+.navbar {
+  box-shadow: 2px 2px 5px #000;
+  opacity: 0.9;
+  background-color: #30336b;
+}
+
+.navbar .nav-item .nav-link {
+  color: #fff;
+  font-size: 18px;
+}
+
+.main-header {
+  position: relative;
+  background: url(../img/alumnos_observando.jpg);
+  background-size: cover;
+  min-height: 100%;
+}
+
+header p {
+  text-align: justify;
+}
+
+.background-overlay {
+  background: rgba(48, 51, 107,.7);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.form-control, .btn{
+  border-radius: 2;
+}
+
+.team, footer {
+  background: #30336b;
+}
+
+footer a, footer p {
+  font-size: 18px;
+  color: white;
+}
+
+#sobre_nosotros {
+  opacity: 0.7;
+  background: #30336b;
+  color: white;
+}
+
+#sobre_nosotros p {
+  text-align: justify;
+}
+
+#nuestros_eventos p {
+  text-align: justify;
+}
+
+#nuestros_eventos h5 {
+  font-weight: 300;
+}
+
+#nuestros_eventos a {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.card {
+  margin-bottom: 30px;
+}
+
+#donativos form {
+}
