@@ -173,7 +173,7 @@
 
       <h2>Donadores</h2>
       <div class="table-responsive">
-        <table class="table table-striped table-sm" id="table">
+        <table class="table table-striped table-sm" id="donadores">
           <thead>
             <tr>
               <th scope="col">ID</th>
@@ -187,9 +187,27 @@
               <th scope="col">Eliminar</th>
               <th scope="col">Modificar</th>
             </tr>
+
           </thead>
           <tbody>
-        
+            <?php
+            include('../php/donador_dao.php');
+            $DAO=new DonadorDAO();
+             $res=$DAO->cargarDonadores();
+             while($fila = mysqli_fetch_assoc($res)){
+              printf("<tr>
+                    <td>".$fila['id']."</td>
+                    <td>".$fila['nombre']."</td>
+                    <td>".$fila['apellido']."</td>
+                    <td>".$fila['Telefono']."</td>
+                    <td>".$fila['direccion']."</td>
+                    <td>".$fila['correo']."</td>
+                    <td>".$fila['categoria']."</td>
+                    <td>".$fila['graduacion']."</td>
+                </tr>", $fila['id'], $fila['nombre'], $fila['apellido'], $fila['Telefono'], $fila['direccion'], $fila['correo'], $fila['categoria'], $fila['graduacion']);
+             }
+            ?>
+            
           </tbody>
         </table>
       </div>
