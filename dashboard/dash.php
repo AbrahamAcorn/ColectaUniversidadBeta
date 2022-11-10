@@ -20,8 +20,8 @@
   <br>
   <br>
   <div>
-    <table class="table table-striped table-sm table-info" id="donadores">
-      <thead>
+    <table class="table table-striped table-sm table-dark table-hover table-bordered" id="donadores">
+      <thead class="table-primary">
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Nombre</th>
@@ -51,8 +51,12 @@
                     <td>" . $fila['correo'] . "</td>
                     <td>" . $fila['categoria'] . "</td>
                     <td>" . $fila['graduacion'] . "</td>
-                    <td>" . $fila['graduacion'] . "</td>
-                    <td>" . $fila['graduacion'] . "</td>
+                    <td>
+                    <a href='vistas/cambios.html' class='btn btn-info' role='button'>Editar</a>
+                    </td>
+                    <td>
+                    <a href='../scripts_php/procesar_baja.php?nc=%s' class='btn btn-danger' role='button'>Eliminar</a>
+                    </td>
                 </tr>", $fila['id']);
         }
         ?>
