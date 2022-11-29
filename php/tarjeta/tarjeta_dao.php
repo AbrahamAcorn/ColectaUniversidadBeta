@@ -13,9 +13,9 @@ class DonadorDAO
     //=====================METODOS PARA ABCC====================
 
     //----------------------------ALTAS-------------------------
-    public function agregaTarjeta($ids, $nom, $ap, $tel, $direc, $mail, $cat, $fech)
+    public function agregaTarjeta($ids, $num, $banco, $vence)
     {
-        $sql = "INSERT INTO donadores VALUES('','$nom', '$ap', '$tel', '$direc', $mail, $cat, '$fech')";
+        $sql = "INSERT INTO donadores VALUES('', '$num', '$banco', '$vence')";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
             //echo "<script> alert('Agregado con EXITO'); </script>"
@@ -40,7 +40,7 @@ class DonadorDAO
     //----------------------------CAMBIOS-------------------------
     public function cambiosTarjeta($id, $num, $banco, $vence)
     {
-        $sql = "UPDATE donadores SET  WHERE idtarjetas='$id'";
+        $sql = "UPDATE donadores SET  num='$num', banco='$banco', vence='$vence' WHERE idtarjetas='$id'";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
             //echo "PERFECTO, CASI SOY ISC :)";
@@ -55,7 +55,7 @@ class DonadorDAO
     //----------------------------CONSULTAS-------------------------
     public function cargarTarjetas()
     {
-        $sql = "SELECT * FROM donadores;";
+        $sql = "SELECT * FROM tarjetas;";
 
         return mysqli_query($this->conexion->getConexion(), $sql);
     }

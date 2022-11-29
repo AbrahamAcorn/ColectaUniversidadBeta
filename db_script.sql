@@ -56,8 +56,8 @@ CREATE TABLE IF NOT EXISTS `uBeta`.`donadores` (
   `tarjeta` INT NULL,
   `direccion` INT NULL,
   PRIMARY KEY (`id`),
-  INDEX `cards_idx` (`tarjeta` ASC) VISIBLE,
-  INDEX `address_idx` (`direccion` ASC) VISIBLE,
+  INDEX `cards_idx` (`tarjeta` ASC),
+  INDEX `address_idx` (`direccion` ASC),
   CONSTRAINT `cards`
     FOREIGN KEY (`tarjeta`)
     REFERENCES `uBeta`.`tarjetas` (`idtarjetas`)
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `uBeta`.`donaciones` (
   `plazos` INT NULL,
   `plazos_abonados` INT NULL,
   PRIMARY KEY (`iddonaciones`),
-  INDEX `donors_idx` (`donador` ASC) VISIBLE,
+  INDEX `donors_idx` (`donador` ASC),
   CONSTRAINT `donors`
     FOREIGN KEY (`donador`)
     REFERENCES `uBeta`.`donadores` (`id`)
@@ -103,8 +103,8 @@ CREATE TABLE IF NOT EXISTS `uBeta`.`users` (
   `passaword` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   PRIMARY KEY (`iduser`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
-  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC))
 ENGINE = InnoDB;
 
 

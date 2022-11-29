@@ -13,9 +13,9 @@ class DonadorDAO
     //=====================METODOS PARA ABCC====================
 
     //----------------------------ALTAS-------------------------
-    public function agregarDonador($ids, $nom, $ap, $tel, $direc, $mail, $cat, $fech)
+    public function agregarDonador($nom, $ap, $ap2, $tel, $email, $categ, $graduate, $tarjeta, $direccion)
     {
-        $sql = "INSERT INTO donadores VALUES('','$nom', '$ap', '$tel', '$direc', $mail, $cat, '$fech')";
+        $sql = "INSERT INTO donadores VALUES('','$nom', '$ap',  $ap2, '$tel', '$email', $categ, $graduate, '$tarjeta', $direccion)";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
             //echo "<script> alert('Agregado con EXITO'); </script>"
@@ -38,9 +38,9 @@ class DonadorDAO
     }
 
     //----------------------------CAMBIOS-------------------------
-    public function guardarCambiosAlumno($nc, $no, $pa, $sa, $ed, $se, $ca)
+    public function CambiosDonadore($id,$nom, $ap, $ap2, $tel, $email, $categ, $graduate, $tarjeta, $direccion)
     {
-        $sql = "UPDATE donadores SET nombre='$no', primer_ap='$pa', edad=$ed, semestre=$se, carrera='$ca' WHERE num_control='$nc'";
+        $sql = "UPDATE donadores SET nombre='$nom', ap1='$ap', ap2=$ap2, tel=$tel, email='$email', categ='$categ', graduate='$graduate', tarjeta='$tarjeta',direccion='$direccion' WHERE num_control='$id'";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
             //echo "PERFECTO, CASI SOY ISC :)";
@@ -62,7 +62,7 @@ class DonadorDAO
 
     public function cargarAlumnosConCampo($campo, $valor)
     {
-        $sql = "SELECT * FROM Alumnos WHERE $campo = '$valor'";
+        $sql = "SELECT * FROM donadores WHERE $campo = '$valor'";
 
         return mysqli_query($this->conexion->getConexion(), $sql);
     }

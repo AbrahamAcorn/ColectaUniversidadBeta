@@ -13,9 +13,9 @@ class DonadorDAO
     //=====================METODOS PARA ABCC====================
 
     //----------------------------ALTAS-------------------------
-    public function agregarDonador($ids, $nom, $ap, $tel, $direc, $mail, $cat, $fech)
+    public function agregarDireccion($direcc, $col, $local, $estado, $pais, $cp)
     {
-        $sql = "INSERT INTO donadores VALUES('','$nom', '$ap', '$tel', '$direc', $mail, $cat, '$fech')";
+        $sql = "INSERT INTO direcciones VALUES('','$direcc', '$col', '$local', '$estado', $pais, $cp)";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
             //echo "<script> alert('Agregado con EXITO'); </script>"
@@ -25,9 +25,9 @@ class DonadorDAO
     }
 
     //----------------------------BAJAS-------------------------
-    public function eliminarAlumno($id)
+    public function eliminarDireccion($id)
     {
-        $sql = "DELETE FROM donadores WHERE id ='$id'";
+        $sql = "DELETE FROM direcciones WHERE id ='$id'";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
             echo "PERFECTO, CASI SOY ISC :)";
@@ -38,9 +38,9 @@ class DonadorDAO
     }
 
     //----------------------------CAMBIOS-------------------------
-    public function guardarCambiosAlumno($nc, $no, $pa, $sa, $ed, $se, $ca)
+    public function cambiaDireccion($id,$direcc, $col, $local, $estado, $pais, $cp)
     {
-        $sql = "UPDATE donadores SET nombre='$no', primer_ap='$pa', edad=$ed, semestre=$se, carrera='$ca' WHERE num_control='$nc'";
+        $sql = "UPDATE direcciones SET direccion='$direcc', colonia='$col', localidad=$local, estado=$estado, pais='$pais', cp='$cp' WHERE num_control='$id'";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
             //echo "PERFECTO, CASI SOY ISC :)";
@@ -53,16 +53,16 @@ class DonadorDAO
     }
 
     //----------------------------CONSULTAS-------------------------
-    public function cargarDonadores()
+    public function cargarDirecciones()
     {
-        $sql = "SELECT * FROM donadores;";
+        $sql = "SELECT * FROM direcciones ;";
 
         return mysqli_query($this->conexion->getConexion(), $sql);
     }
 
     public function cargarAlumnosConCampo($campo, $valor)
     {
-        $sql = "SELECT * FROM Alumnos WHERE $campo = '$valor'";
+        $sql = "SELECT * FROM direcciones WHERE $campo = '$valor'";
 
         return mysqli_query($this->conexion->getConexion(), $sql);
     }
