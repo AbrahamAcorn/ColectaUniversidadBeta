@@ -4,7 +4,7 @@
         private $host = 'localhost:3306';
         private $usuario = 'abam';
         private $contraseña = 'pepe';
-        private $bd = 'unibeta';
+        private $bd = 'ubeta';
 
         public function __construct(){
             $this->conexion = mysqli_connect($this->host, $this->usuario, $this->contraseña, $this->bd);

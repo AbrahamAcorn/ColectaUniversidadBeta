@@ -26,11 +26,14 @@
           <th scope="col">ID</th>
           <th scope="col">Nombre</th>
           <th scope="col">Apellido</th>
+          <th scope="col">Apellido</th>
           <th scope="col">Telefono</th>
-          <th scope="col">Direccion</th>
-          <th scope="col">Correo</th>
+          <th scope="col">eMail</th>
+          <th scope="col">Categoria</th>
           <th scope="col">Categoria</th>
           <th scope="col">Graduacion</th>
+          <th scope="col">Tarjeta</th>
+          <th scope="col">Direccion</th>
           <th scope="col">Eliminar</th>
           <th scope="col">Modificar</th>
         </tr>
@@ -45,12 +48,14 @@
           printf("<tr>
                     <td>" . $fila['id'] . "</td>
                     <td>" . $fila['nombre'] . "</td>
-                    <td>" . $fila['apellido'] . "</td>
-                    <td>" . $fila['Telefono'] . "</td>
+                    <td>" . $fila['ap1'] . "</td>
+                    <td>" . $fila['ap2'] . "</td>
+                    <td>" . $fila['tel'] . "</td>
+                    <td>" . $fila['email'] . "</td>
+                    <td>" . $fila['categ'] . "</td>
+                    <td>" . $fila['graduate'] . "</td>
+                    <td>" . $fila['tarjeta'] . "</td>
                     <td>" . $fila['direccion'] . "</td>
-                    <td>" . $fila['correo'] . "</td>
-                    <td>" . $fila['categoria'] . "</td>
-                    <td>" . $fila['graduacion'] . "</td>
                     <td>
                     <a href='vistas/cambios.html' class='btn btn-info' role='button'>Editar</a>
                     </td>

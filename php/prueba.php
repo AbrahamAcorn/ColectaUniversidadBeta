@@ -1,6 +1,6 @@
 <?php
 
-    include('../php/donador_dao.php');
+    include('donador/donador_dao.php');
     $DAO=new DonadorDAO();
      $res=$DAO->cargarDonadores();
      var_dump($res);
