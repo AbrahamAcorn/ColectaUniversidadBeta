@@ -1,7 +1,7 @@
 <?php
 include('conexion_bd.php');
 
-class DonadorDAO
+class TarjetaDAO
 {
     private $conexion;
 
