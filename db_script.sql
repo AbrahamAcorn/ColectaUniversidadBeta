@@ -111,3 +111,20 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+CREATE VIEW donaciones_full AS SELECT nombre, categ, graduate FROM donadores JOIN donaciones ON donaciones.donador=donadores.id;
+
+
+DELIMITER $$
+CREATE PROCEDURE registra_todo(IN `direction` VARCHAR(50), IN `col` VARCHAR(45), IN `locali` VARCHAR(45), IN `estate` VARCHAR(45), IN `pais` VARCHAR(45), IN `cp` VARCHAR(45), IN `nume` VARCHAR(45), IN `banco` VARCHAR(45), IN `vence` VARCHAR(45), IN `name` VARCHAR(100), IN `ap1` VARCHAR(100), IN `ap2` VARCHAR(100), IN `phone` VARCHAR(45), IN `email`(45), IN `categ` VARCHAR(45), IN `graduate` DATE, IN `promet` DOUBLE(10,2), IN `abono` DOUBLE(10,2), IN `fechbono` DATE, IN `fechlim` DATE, IN `pago` VARCHAR(50), IN `plazo` INT(11), IN `plazoabon` INT(11))
+	BEGIN
+    	DECLARE @ids 
+        
+        INSERT INTO `direcciones`(`iddirecciones`, `direccion`, `colonia`, `localidad`, `estado`, `pais`, `cp`) VALUES ('		',direction,col,locali,estate,pais,cp);
+        
+        INSERT INTO `tarjetas`(`idtarjetas`, `num`, `banco`, `vence`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')
+        
+		@ids=SELECT ID FROM donadores WHERE email=
+        RETURN @ids
+	END$$
