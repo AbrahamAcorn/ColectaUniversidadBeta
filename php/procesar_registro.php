@@ -36,9 +36,6 @@
     $s = $_POST['caja_semestre'];
     $c = $_POST['caja_carrera'];
 
-    $tarjeta = new TarjetaDAO();
+    
 
-    $tarjeta->agregaTarjeta()
-
-CAMbiar todo por el desgraciado del procedimiento almacendado
 ?>

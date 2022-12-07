@@ -1,7 +1,6 @@
 <?php
-include('../conexion_bd.php');
-
-class DonadorDAO
+include('conexion_bd.php');
+class DonacionDAO
 {
     private $conexion;
 
@@ -13,7 +12,7 @@ class DonadorDAO
     //=====================METODOS PARA ABCC====================
 
     //----------------------------ALTAS-------------------------
-    public function agregarDonador($donador,$prometido,$abono,$fechabono,$fechalimite,$formapago,$plazos,$pabonados)
+    public function agregarDonacion($donador,$prometido,$abono,$fechabono,$fechalimite,$formapago,$plazos,$pabonados)
     {
         $sql = "INSERT INTO donadores VALUES('','$donador', '$prometido',  $abono, '$fechabono', '$fechalimite', $formapago, $plazos, '$pabonados')";
 
@@ -53,9 +52,16 @@ class DonadorDAO
     }
 
     //----------------------------CONSULTAS-------------------------
-    public function cargarDonadores()
+    public function cargarDonaciones()
     {
-        $sql = "SELECT * FROM donadores;";
+        $sql = "SELECT * FROM donaciones;";
+
+        return mysqli_query($this->conexion->getConexion(), $sql);
+    }
+
+    public function cargarDonacionesFull()
+    {
+        $sql = "SELECT * FROM donaciones_full";
 
         return mysqli_query($this->conexion->getConexion(), $sql);
     }
