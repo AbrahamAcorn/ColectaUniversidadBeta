@@ -185,3 +185,8 @@ VALUES (
 END $$
 
 CALL registra_todo('prueba #1','colonia','localidad','estado', 'pais','90078','9879 8798 7987 9878', 'HSBC','2024/05/06','Pablo','apellido','Apellido','1234567890','pablo@gmail.com','Graduado','2015/06/06' ,'65000','25000','2022/12/06','2023/06/06','Tarjeta de Debito','10','3');
+
+{"direction":"prueba API#65", "col":"APIOSA","locali":"jerez","estate":"zacatecas","pais":"mexico","cp":"99300","nume":"9874 5648 2314 5245","banco":"FAKE","vence":"2024/12/12","name":"Apia","ap1":"apeuno","ap2":"apedos","phone":"9874987498",
+            "email":"apia@gmail.com","categ":"Administrativo","graduate":"2000/01/01","promet":"750000","abono":"250000","fechabono":"2022/12/12","fechalimite":"2023/02/12","pago":"Cheque","plazos":"5","plazosabon":"3"}
+
+            

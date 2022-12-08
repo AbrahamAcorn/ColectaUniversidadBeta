@@ -261,32 +261,32 @@
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="nombre">Nombre:</label>
-            <input type="text" class="form-control" name="nombre" id="nombre" onkeypress="ocultarMensajeNombre();">
+            <input type="text" class="form-control" name="caja_nombre" id="caja_nombre" onkeypress="ocultarMensajeNombre();">
             <div class="invalid-tooltip" id="tool_nombre">Ingresa tu nombre</div>
             <div class="mensajes rounded" id="mensajes_nombre"></div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="primer_apellido">Primer Apellido:</label>
-            <input type="text" class="form-control" name="primer_apellido" id="primer_apellido" onkeypress="ocultarMensajePrimerAp();">
+            <input type="text" class="form-control" name="caja_ap1" id="caja_ap1" onkeypress="ocultarMensajePrimerAp();">
             <div class="mensajes rounded" id="mensajes_primer_apellido"></div>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="segundo_apellido">Segundo Apellido:</label>
-            <input type="text" class="form-control" name="segundo_apellido" id="segundo_apellido" onkeypress="ocultarMensajeSegundoAp();">
+            <input type="text" class="form-control" name="caja_ap2" id="caja_ap2" onkeypress="ocultarMensajeSegundoAp();">
             <div class="mensajes rounded" id="mensajes_segundo_apellido"></div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="telefono">Telefono</label>
-            <input type="tel" class="form-control" name="telefono" id="telefono" onkeypress="ocultarMensajeTelefono();">
+            <input type="tel" class="form-control" name="caja_telefono" id="caja_telefono" onkeypress="ocultarMensajeTelefono();">
             <div class="mensajes rounded" id="mensajes_telefono"></div>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="email">Email:</label>
-            <input type="text" class="form-control" name="email" id="email" onkeypress="ocultarMensajeCorreo();">
+            <input type="text" class="form-control" name="caja_email" id="caja_email" onkeypress="ocultarMensajeCorreo();">
             <div class="mensajes rounded" id="mensajes_correo"></div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
@@ -296,6 +296,8 @@
               <option value = "1">Estudiante</option>
               <option value = "2">Graduado</option>
               <option value = "3">Maestro</option>
+              <option value = "4">Administrativo</option>
+              <option value = "5">Otro</option>
             </select>
             <div class="mensajes rounded" id="mensajes_categoria"></div>
           </div>
@@ -303,7 +305,7 @@
         <div class="form-row justify-content-center">
           <div style="display: none;" class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-3" id="espacio_fecha_graduacion">
             <label for="fecha_graduacion">Fecha de Graduacion:</label>
-            <input type="date" class="form-control" name="fecha_graduacion" id="caja_fecha_graduacion" onclick="ocultarMensajeFechaGraduacion();" onchange="ocultarMensajeFechaGraduacion();" onkeypress="ocultarMensajeFechaGraduacion();">
+            <input type="date" class="form-control" name="fecha_graduacion" id="fecha_graduacion" onclick="ocultarMensajeFechaGraduacion();" onchange="ocultarMensajeFechaGraduacion();" onkeypress="ocultarMensajeFechaGraduacion();">
             <div class="mensajes rounded" id="mensajes_fecha_graduacion"></div>
           </div>
         </div>
@@ -343,7 +345,7 @@
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="select_metodo">Metodo de Pago:</label>
-            <select class="custom-select mr-sm-2" id="select_metodo_pago" onchange="ocultarMensajeMetodoPago();">
+            <select class="custom-select mr-sm-2" id="select_pago" onchange="ocultarMensajeMetodoPago();">
               <option value="" selected disabled> - Seleccionar una opcion - </option>
               <option value="1">Tarjeta credito American Express</option>
               <option value="2">Tarjeta credito Visa</option>
@@ -351,6 +353,7 @@
               <option value="4">Tarjeta debito American Express</option>
               <option value="5">Tarjeta debito Visa</option>
               <option value="6">Tarjeta debito Mastercard</option></select>
+              <option value="6">Cuenta de Cheques</option></select>
             </select>
             <div class="mensajes rounded" id="mensajes_metodo_pago">Selecciona una opcion</div>
           </div>
@@ -358,7 +361,7 @@
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="numero_de_tarjeta">Numero de Tarjeta:</label>
-            <input type="text" class="form-control" name="numero_de_tarjeta" id="numero_de_tarjeta" onkeypress="ocultarMensajeNumTarjeta();">
+            <input type="text" class="form-control" name="numero_tarjeta" id="numero_tarjeta" onkeypress="ocultarMensajeNumTarjeta();">
             <div class="mensajes" id="mensajes_num_tarjeta"></div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
@@ -417,25 +420,25 @@
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-4 col-md-4 col-lg-6 col-xl-6 mb-4_5">
             <label for="calle">Calle:</label>
-            <input type="text" class="form-control" name="calle" id="calle" onkeypress="ocultarMensajeCalle();">
+            <input type="text" class="form-control" name="caja_calle" id="caja_calle" onkeypress="ocultarMensajeCalle();">
             <div class="mensajes rounded" id="mensajes_calle"></div>
           </div>
           <div class="form-group col-12 col-sm-4 col-md-4 col-lg-6 col-xl-6 mb-4_5">
             <label for="colonia">Colonia:</label>
-            <input type="text" class="form-control" name="colonia" id="colonia" onkeypress="ocultarMensajeColonia();">
+            <input type="text" class="form-control" name="caja_col" id="caja_col" onkeypress="ocultarMensajeColonia();">
             <div class="mensajes rounded" id="mensajes_colonia"></div>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-4 col-md-4 col-lg-6 col-xl-6 mb-4_5">
             <label for="municipio">Municipio</label>
-            <input type="text" class="form-control" name="municipio" id="municipio"
+            <input type="text" class="form-control" name="caja_municipio" id="caja_municipio"
             onkeypress="ocultarMensajeMunicipio();">
             <div class="mensajes rounded" id="mensajes_municipio"></div>
           </div>
           <div class="form-group col-12 col-sm-4 col-md-4 col-lg-6 col-xl-6 mb-4_5">
             <label for="cp">Codigo Postal</label>
-            <input type="text" class="form-control" name="cp" id="cp" onkeypress="ocultarMensajeCp();">
+            <input type="text" class="form-control" name="caja_cp" id="caja_cp" onkeypress="ocultarMensajeCp();">
             <div class="mensajes rounded" id="mensajes_cp"></div>
           </div>
         </div>

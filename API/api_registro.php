@@ -15,33 +15,33 @@
         } else {
             $datos = json_decode($cadena_JSON, true);
 
-            $direction = $datos['donador'];
-            $col = $datos['prometido'];
-            $locali = $datos['abonado'];
-            $estate = $datos['fechabono'];
-            $pais = $datos['fechalimite'];
-            $cp = $datos['formapago'];
-            $nume = $datos['plazos'];
-            $banco = $datos['plazosabon'];
-            $vence = $datos['donador'];
-            $name = $datos['prometido'];
-            $ap1 = $datos['abonado'];
-            $ap2 = $datos['fechabono'];
-            $phone = $datos['fechalimite'];
-            $email = $datos['formapago'];
-            $categ = $datos['plazos'];
-            $graduate = $datos['plazosabon'];
-            $promet = $datos['donador'];
-            $abono = $datos['prometido'];
-            $fechabono = $datos['abonado'];
-            $fechalimite = $datos['fechabono'];
-            $pago = $datos['fechalimite'];
+            $direction = $datos['direction'];
+            $col = $datos['col'];
+            $locali = $datos['locali'];
+            $estate = $datos['estate'];
+            $pais = $datos['pais'];
+            $cp = $datos['cp'];
+            $nume = $datos['nume'];
+            $banco = $datos['banco'];
+            $vence = $datos['vence'];
+            $name = $datos['name'];
+            $ap1 = $datos['ap1'];
+            $ap2 = $datos['ap2'];
+            $phone = $datos['phone'];
+            $email = $datos['email'];
+            $categ = $datos['categ'];
+            $graduate = $datos['graduate'];
+            $promet = $datos['promet'];
+            $abono = $datos['abono'];
+            $fechabono = $datos['fechabono'];
+            $fechalimite = $datos['fechalimite'];
+            $pago = $datos['pago'];
             $plazos = $datos['plazos'];
             $plazosabon = $datos['plazosabon'];
 
             $sql = "CALL registra_todo('$direction', '$col','$locali','$estate'
             ,'$pais','$cp','$nume','$banco','$vence','$name','$ap1','$ap2','$phone',
-            '$email','$categ','$graduate','$promet','$abono','$fechabono','$fechlimite','$pago','$plazo','$plazoabon');";
+            '$email','$categ','$graduate','$promet','$abono','$fechabono','$fechalimite','$pago','$plazos','$plazosabon');";
 
             $res = mysqli_query($conexion, $sql);
 
