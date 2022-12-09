@@ -1,7 +1,7 @@
 <?php
 include('conexion_bd.php');
 
-class DonadorDAO
+class UsuarioDAO
 {
     private $conexion;
 
@@ -13,14 +13,15 @@ class DonadorDAO
     //=====================METODOS PARA ABCC====================
 
     //----------------------------ALTAS-------------------------
-    public function crearUsuario($id, $user, $email, $password)
+    public function crearUsuario( $user, $email, $passw)
     {
-        $sql = "INSERT INTO users VALUES('', $user, $email, $password)";
+        $sql = "INSERT INTO Users VALUES('',' $user', '$passw', '$email')";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
-            //echo "<script> alert('Agregado con EXITO'); </script>"
+            echo "<script> alert('Agregado con EXITO'); </script>";
+            header("location: ../login/login.html");
         } else {
-            //echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA?   :(";
+            echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA?   :(";
         }
     }
 
