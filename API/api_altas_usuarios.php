@@ -16,10 +16,10 @@
             $datos = json_decode($cadena_JSON, true);
 
             $username = $datos['username'];
-            $password = $datos['password'];
+            $passaword = $datos['passaword'];
             $email = $datos['email'];
 
-            $sql = "INSERT INTO users VALUES('', '$username', '$password', '$email');";
+            $sql = "INSERT INTO users VALUES('', '$username', '$passaword', '$email');";
 
             $res = mysqli_query($conexion, $sql);
 

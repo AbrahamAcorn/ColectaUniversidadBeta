@@ -7,7 +7,7 @@
 
     //var_dump($conexion);
 
-    if($_SERVER['REQUEST_METHOD'] == 'GET') {
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $cadena_JSON = file_get_contents('php://input'); //Recibe información a través de HTTP
         var_dump($cadena_JSON);
         if($cadena_JSON == false) {
@@ -26,7 +26,7 @@
                     $alumno = array();
                     $alumno['iduser'] = $fila['iduser'];
                     $alumno['username'] = $fila['username'];
-                    $alumno['password'] = $fila['password'];
+                    $alumno['passaword'] = $fila['passaword'];
                     $alumno['email'] = $fila['email'];
 
                     array_push($datos['users'], $alumno);

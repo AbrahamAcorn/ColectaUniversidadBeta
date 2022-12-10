@@ -20,7 +20,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" >
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -575,7 +575,6 @@
                             </div>
                         </div>
                     </div>
-                    ---- aqui corta
 
             </div>
             <!-- End of Main Content -->

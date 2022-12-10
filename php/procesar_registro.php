@@ -19,7 +19,7 @@
     $email = $_POST['caja_email'];
     $categ = $_POST['select_categoria'];
     $graduate = $_POST['fecha_graduacion'];
-    $promet = $_POST['promet'];
+    $promet = $_POST['radio'];
     $abono = $_POST['abono'];
     $fechabono = $_POST['fechabono'];
     $fechalimite = $_POST['fechalimite'];
@@ -27,7 +27,9 @@
     $plazos = $_POST['select_mensualidades'];
     $plazosabon = $_POST['plazosabon'];
 
-
-    FALTA ACOMODAR TODO EL DESGRACIADO PHP OTRA VEZ
+    echo(printf("$direction, $col,$locali,$estate,$pais,$cp
+    ,$nume,$banco,$vence,$name,$ap1,$ap2,$phone,$categ,
+    $graduate,$promet,
+    "))
 
 ?>
