@@ -178,7 +178,7 @@
 
   <!-- DONATIVOS -->
   <section id="donativos" class="col-10 my-5 justify-content-center display-flex">
-    <form method="POST" id="formulario" onsubmit="return validarFormulario();" novalidate action="/php/procesar_registro.php">
+    <form method="POST" id="formulario"  action="php/procesar_registro.php"  novalidate onsubmit="return validarFormulario();" >
       <section id="cantidad_a_donar" class="rounded shadow-lg">
         <div class="section_radios">
           <div class="container">
@@ -385,7 +385,7 @@
             <div class="mensajes rounded" id="mensajes_plazo">Selecciona una opcion</div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4" style="display: none;" id="espacio_plazos">
-            <label for="select_banco">Cantidad de Plazos:</label>
+            <label for="select_mensualidades">Cantidad de Plazos:</label>
             <select class="custom-select mr-sm-2" id="select_mensualidades" onchange="ocultarMensajeMensualidad();">
               <option value="" disabled selected> - Seleccionar una opcion - </option>
               <option value="1">3 mensualidades</option>

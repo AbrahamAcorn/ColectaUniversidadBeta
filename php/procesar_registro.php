@@ -21,15 +21,16 @@
     $graduate = $_POST['fecha_graduacion'];
     $promet = $_POST['radio'];
     $abono = $_POST['abono'];
-    $fechabono = $_POST['fechabono'];
+    $fechabono = date('y/m/d');
     $fechalimite = $_POST['fechalimite'];
     $pago = $_POST['select_pago'];
     $plazos = $_POST['select_mensualidades'];
     $plazosabon = $_POST['plazosabon'];
 
-    echo(printf("$direction, $col,$locali,$estate,$pais,$cp
-    ,$nume,$banco,$vence,$name,$ap1,$ap2,$phone,$categ,
-    $graduate,$promet,
-    "))
+    echo(printf("direccion $direction, $col,$locali,$estate,$pais,$cp
+    ,tarjeta $nume,$banco,$vence, donador$name,$ap1,$ap2,$phone,$categ,
+    $graduate,donacion$promet,$abono,$fechabono,$fechalimite,$pago,$plazos,$plazosabons"));
+
+    echo "<script> alert('Agregado con EXITO'); </script>";
 
 ?>
