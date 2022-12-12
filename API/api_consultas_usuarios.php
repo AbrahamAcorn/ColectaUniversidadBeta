@@ -7,7 +7,7 @@
 
     //var_dump($conexion);
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $cadena_JSON = file_get_contents('php://input'); //Recibe información a través de HTTP
         //var_dump($cadena_JSON);
         if($cadena_JSON == false) {
@@ -32,7 +32,7 @@
                     array_push($datos['users'], $alumno);
                 }
 
-                echo json_encode($datos);
+                echo json_encode($datos['users']);
 
             } else {
                 //Todo mal
@@ -46,5 +46,6 @@
     } else {
         echo "No hay peticion HTTP";
     }
+
 
 ?>

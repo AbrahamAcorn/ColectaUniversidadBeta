@@ -1,28 +1,26 @@
 <?php
-
+header('Content-Type: multipart/form-data');
     include('../php/conexion_bd.php');
 
     $con = new ConexionBD();
     $conexion = $con->getConexion();
 
-    //var_dump($conexion);
+    //var_dump($conexion);   
+    if(isset($_POST['username']) &
+       isset($_POST['passaword']) &
+       isset($_POST['email']) &
+       isset($_POST['iduser'])){
+       
+       $usern = $_POST['username'];
+            $psw = $_POST['passaword'];
+            $email = $_POST['email'];
+            $id=$_POST['iduser'];
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $cadena_JSON = file_get_contents('php://input'); //Recibe información a través de HTTP
+            $sql = "UPDATE `users` SET `username`='$usern',`passaword`='$psw',`email`='$email' WHERE iduser=$id;";
 
-        if($cadena_JSON == false) {
-            echo "No hay cadena JSON";
-        } else {
-            $datos = json_decode($cadena_JSON, true);
-
-            $iduser = $datos['iduser'];
-            $username = $datos['username'];
-            $password = $datos['password'];
-            $email = $datos['email'];
-
-
-            $sql = "UPDATE usuarios  username='$n', password='$username', email='$password' WHERE NoControl='$nc';";
             $res = mysqli_query($conexion, $sql);
+            //var_dump($res);
+
             $respuesta = array();
 
             if($res) {
@@ -30,18 +28,21 @@
                 $respuesta['exito'] = true;
                 $respuesta['mensaje'] = "Modificacion correcta";
                 $cad = json_encode($respuesta);
-                var_dump($cad);
+                echo($cad);
+                //var_dump($cad);
             } else {
                 //Todo mal
                 $respuesta['exito'] = false;
-                $respuesta['mensaje'] = "Error en la modificion";
+                echo(die(mysqli_error($conexion)));
+                $respuesta['mensaje'] = "Error modificando el registro";
                 $cad = json_encode($respuesta);
-                var_dump($cad);
+                echo($cad);
+                //var_dump($cad);
+                //die(mysqli_error($conexion));
             }
-        }        
-
-    } else {
-        echo "No hay peticion HTTP";
-    }
-
+       
+       }else{
+       
+       echo("ERROR");
+       }
 ?>
