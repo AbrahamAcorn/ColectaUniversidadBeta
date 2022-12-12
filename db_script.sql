@@ -189,4 +189,4 @@ CALL registra_todo('prueba #1','colonia','localidad','estado', 'pais','90078','9
 {"direction":"prueba API#65", "col":"APIOSA","locali":"jerez","estate":"zacatecas","pais":"mexico","cp":"99300","nume":"9874 5648 2314 5245","banco":"FAKE","vence":"2024/12/12","name":"Apia","ap1":"apeuno","ap2":"apedos","phone":"9874987498",
             "email":"apia@gmail.com","categ":"Administrativo","graduate":"2000/01/01","promet":"750000","abono":"250000","fechabono":"2022/12/12","fechalimite":"2023/02/12","pago":"Cheque","plazos":"5","plazosabon":"3"}
 
-            
+v=Ut^E=HM*2lgLc[

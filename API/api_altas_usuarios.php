@@ -19,7 +19,7 @@
             $passaword = $datos['passaword'];
             $email = $datos['email'];
 
-            $sql = "INSERT INTO users VALUES('', '$username', '$passaword', '$email');";
+            $sql = "INSERT INTO users VALUES(NULL, '$username', '$passaword', '$email');";
 
             $res = mysqli_query($conexion, $sql);
 
@@ -30,13 +30,14 @@
                 $respuesta['exito'] = true;
                 $respuesta['mensaje'] = "Insercion correcta";
                 $cad = json_encode($respuesta);
-                var_dump($cad);
+                //var_dump($cad);
+                
             } else {
                 //Todo mal
                 $respuesta['exito'] = false;
                 $respuesta['mensaje'] = "Error en la insercion";
                 $cad = json_encode($respuesta);
-                var_dump($cad);
+                //var_dump($cad);
             }
         }        
 

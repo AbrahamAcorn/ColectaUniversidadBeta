@@ -9,7 +9,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $cadena_JSON = file_get_contents('php://input'); //Recibe información a través de HTTP
-        var_dump($cadena_JSON);
+        //var_dump($cadena_JSON);
         if($cadena_JSON == false) {
             echo "No hay cadena JSON";
         } else {

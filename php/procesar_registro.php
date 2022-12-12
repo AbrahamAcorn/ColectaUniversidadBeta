@@ -19,18 +19,17 @@
     $email = $_POST['caja_email'];
     $categ = $_POST['select_categoria'];
     $graduate = $_POST['fecha_graduacion'];
-    $promet = $_POST['radio'];
+    $promet = $_POST['caja_otra_cantidad'];
     $abono = $_POST['abono'];
-    $fechabono = date('y/m/d');
-    $fechalimite = $_POST['fechalimite'];
+    $fechabono = date('Y/m/d');
+    $fechalimite = date("Y/m/d",strtotime($fechabono."+ 1 YEAR"));
     $pago = $_POST['select_pago'];
     $plazos = $_POST['select_mensualidades'];
-    $plazosabon = $_POST['plazosabon'];
+    $plazosabon = 1;
 
-    echo(printf("direccion $direction, $col,$locali,$estate,$pais,$cp
-    ,tarjeta $nume,$banco,$vence, donador$name,$ap1,$ap2,$phone,$categ,
-    $graduate,donacion$promet,$abono,$fechabono,$fechalimite,$pago,$plazos,$plazosabons"));
+    echo(printf("direccion $direction--$col--$locali--$estate--$pais--$cp
+    ,tarjeta $nume--$banco--$vence, donador$name--$ap1--$ap2--$phone--$categ
+    --$graduate,donacion $promet--$abono--$fechabono--$fechalimite--$pago--$plazos--$plazosabons"));
 
     echo "<script> alert('Agregado con EXITO'); </script>";
-
 ?>
