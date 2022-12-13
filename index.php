@@ -20,7 +20,7 @@
   <!-- CUSTOM CSS -->
   <link rel="stylesheet" href="assets/css/index.css">
 
-  
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -241,7 +241,7 @@
                     <input class="checkbox-budget" value="otro" type="radio" name="budget" id="budget-9" onclick="mostrarOtraCantidad();">
                     <label for="budget-9" id="label_otra_cantidad" class="formato_label2">
                       <span id="span_otra_cantidad" data-hover="Otra">Otra</span>
-                      <input style="display: none;" class="form-control" type="number" max="1000000" min="10" name="caja_otra_cantidad" id="caja_otra_cantidad" onkeyup="comprobarCantidad();">
+                      <input style="display: none;" class="form-control" type="number" max="100000" min="10" name="caja_otra_cantidad" id="caja_otra_cantidad" onkeyup="comprobarCantidad();">
                     </label>
                     <div class="mensajes rounded" id="mensajes_cantidad"></div>
                   </div>
@@ -291,13 +291,13 @@
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="select_categoria">Categoria:</label>
-            <select class="custom-select mr-sm-2" id="select_categoria" onchange="mostrarOcultarFechaGraduacion();">
+            <select class="custom-select mr-sm-2" name="select_categoria" id="select_categoria" onchange="mostrarOcultarFechaGraduacion();">
               <option value = "" selected disabled> - Seleccionar una opcion - </option>
-              <option value = "1">Estudiante</option>
-              <option value = "2">Graduado</option>
-              <option value = "3">Maestro</option>
-              <option value = "4">Administrativo</option>
-              <option value = "5">Otro</option>
+              <option value = "Estudiante">Estudiante</option>
+              <option value = "Graduado">Graduado</option>
+              <option value = "Maestro">Maestro</option>
+              <option value = "Administrativo">Administrativo</option>
+              <option value = "Otro">Otro</option>
             </select>
             <div class="mensajes rounded" id="mensajes_categoria"></div>
           </div>
@@ -310,8 +310,7 @@
           </div>
         </div>
       </section>
-      <br><br>
-
+      <br><br>  
       <section id="datos_de_pago" class="pb-3 rounded shadow-lg">
         <div class="form-row justify-content-center">
           <h1 style="text-align: center;" class="titulos_responsive py-3">Datos de Pago</h1>
@@ -319,41 +318,41 @@
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="select_banco">Banco:</label>
-            <select class="custom-select mr-sm-2" id="select_banco" onchange="ocultarMensajeBanco();">
+            <select class="custom-select mr-sm-2" id="select_banco" name="s_banco" onchange="ocultarMensajeBanco();">
               <option value="" disabled selected> - Seleccionar una opcion - </option>
-              <option value="1">American Express</option>
-              <option value="2">Banamex</option>
-              <option value="3">Banco Afirme</option>
-              <option value="4">Banco Azteca</option>
-              <option value="5">Banco Invex</option>
-              <option value="6">Bancomext</option>
-              <option value="7">BanCoppel</option>
-              <option value="8">Banjercito</option>
-              <option value="9">Bank of America</option>
-              <option value="10">Banorte</option>
-              <option value="11">Banregio</option>
-              <option value="12">BBVA Bancomer</option>
-              <option value="13">CIBanco</option>
-              <option value="14">Del Bajio</option>
-              <option value="15">HSBC</option>
-              <option value="16">Inbursa</option>
-              <option value="17">Nacional Financiera</option>
-              <option value="18">Santander</option>
-              <option value="19">Scotiabank</option>
+              <option value="American Express">American Express</option>
+              <option value="Banamex">Banamex</option>
+              <option value="Banco Afirme">Banco Afirme</option>
+              <option value="Banco Azteca">Banco Azteca</option>
+              <option value="Banco Invex">Banco Invex</option>
+              <option value="Bancomext">Bancomext</option>
+              <option value="BanCoppel">BanCoppel</option>
+              <option value="Banjercito">Banjercito</option>
+              <option value="Bank of America">Bank of America</option>
+              <option value="Banorte">Banorte</option>
+              <option value="Banregio">Banregio</option>
+              <option value="BBVA Bancomer">BBVA Bancomer</option>
+              <option value="CIBanco">CIBanco</option>
+              <option value="Del Bajio">Del Bajio</option>
+              <option value="HSBC">HSBC</option>
+              <option value="Inbursa">Inbursa</option>
+              <option value="Nacional Financiera">Nacional Financiera</option>
+              <option value="Santander">Santander</option>
+              <option value="Scotiabank">Scotiabank</option>
             </select>
             <div class="mensajes rounded" id="mensajes_banco">Selecciona una opcion</div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="select_metodo">Metodo de Pago:</label>
-            <select class="custom-select mr-sm-2" id="select_pago" onchange="ocultarMensajeMetodoPago();">
+            <select class="custom-select mr-sm-2" id="select_pago"  name="select_pago" onchange="ocultarMensajeMetodoPago();">
               <option value="" selected disabled> - Seleccionar una opcion - </option>
-              <option value="1">Tarjeta credito American Express</option>
-              <option value="2">Tarjeta credito Visa</option>
-              <option value="3">Tarjeta credito Mastercard</option>
-              <option value="4">Tarjeta debito American Express</option>
-              <option value="5">Tarjeta debito Visa</option>
-              <option value="6">Tarjeta debito Mastercard</option></select>
-              <option value="6">Cuenta de Cheques</option></select>
+              <option value="Tarjeta credito American Express">Tarjeta credito American Express</option>
+              <option value="Tarjeta credito Visa">Tarjeta credito Visa</option>
+              <option value="Tarjeta credito Mastercard">Tarjeta credito Mastercard</option>
+              <option value="Tarjeta debito American Express">Tarjeta debito American Express</option>
+              <option value="Tarjeta debito Visa">Tarjeta debito Visa</option>
+              <option value="Tarjeta debito Mastercard">Tarjeta debito Mastercard</option></select>
+              <option value="Cuenta de Cheques">Cuenta de Cheques</option></select>
             </select>
             <div class="mensajes rounded" id="mensajes_metodo_pago">Selecciona una opcion</div>
           </div>
@@ -386,12 +385,12 @@
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4" style="display: none;" id="espacio_plazos">
             <label for="select_mensualidades">Cantidad de Plazos:</label>
-            <select class="custom-select mr-sm-2" id="select_mensualidades" onchange="ocultarMensajeMensualidad();">
+            <select class="custom-select mr-sm-2" id="select_mensualidades" name="select_mensualidades" onchange="ocultarMensajeMensualidad();">
               <option value="" disabled selected> - Seleccionar una opcion - </option>
-              <option value="1">3 mensualidades</option>
-              <option value="2">6 mensualidades</option>
-              <option value="3">9 mensualidades</option>
-              <option value="4">12 mensualidades</option>
+              <option value="3">3 mensualidades</option>
+              <option value="6">6 mensualidades</option>
+              <option value="9">9 mensualidades</option>
+              <option value="12">12 mensualidades</option>
             </select>
             <div class="mensajes rounded" id="mensajes_mensualidades">Selecciona una opcion</div>
           </div>
@@ -445,14 +444,14 @@
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-4 col-md-4 col-lg-6 col-xl-6 mb-4_5">
             <label for="select_estado">Estado:</label>
-            <select class="custom-select mr-sm-2" id="select_estado" onchange="ocultarMensajeEstado();">
+            <select class="custom-select mr-sm-2" id="select_estado" name="s_estate" onchange="ocultarMensajeEstado();">
               <option value = "" selected disabled> - Seleccionar Pais - </option>
             </select>
             <div class="mensajes rounded" id="mensajes_estado">Selecciona una opcion</div>
           </div>
           <div class="form-group col-12 col-sm-4 col-md-4 col-lg-6 col-xl-6 mb-4_5">
             <label for="select_pais">Pais:</label>
-            <select class="custom-select mr-sm-2" id="select_pais" onchange="cambioPais();">
+            <select class="custom-select mr-sm-2" id="select_pais" name="select_pais" onchange="cambioPais();">
               <option value = "" selected disabled> - Seleccionar una opcion - </option>
               <option value = "argentina.txt">Argentina</option>
               <option value = "bolivia.txt">Bolivia</option>
@@ -473,7 +472,9 @@
             </div>
           </div>
         </div>
-
+        <div class="form-row justify-content-center mb-5">
+          <div class="g-recaptcha" data-sitekey="6LcvUXIjAAAAALIEWpqjJEcj7VFytXDpnvPdZvgT"></div>
+        </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-10 col-xl-10 mb-3">
             <button type="submit" class="btn btn-primary btn-block">Enviar</button>
