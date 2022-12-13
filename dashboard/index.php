@@ -138,21 +138,12 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components,
-                    and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to
-                    Pro!</a>
-            </div>
-
         </ul>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
+            
             <!-- Main Content -->
             <div id="content">
 
@@ -345,6 +336,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -438,7 +430,40 @@
                     </div>
                 </div>
                 <!-- /.container-fluid -->
+                <div class="row">
 
+<div class="col-xl-8 col-lg-7">
+
+    <!-- Area Chart -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+        </div>
+        <div class="card-body">
+            <div class="chart-area">
+                <canvas id="myAreaChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Donut Chart -->
+<div class="col-xl-4 col-lg-5">
+    <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+            <div class="chart-pie pt-4">
+                <canvas id="myPieChart"></canvas>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+</div>
                 <div class="container-fluid">
 
 

@@ -9,16 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Buttons</title>
+    <title>Donaciones</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -33,9 +36,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <i class="fa-sharp fa-solid fa-hashtag"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Universidad<sup>B</sup></div>
             </a>
 
             <!-- Divider -->
@@ -43,7 +46,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -57,18 +60,20 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-                    aria-controls="collapseTwo">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>Donaciones</span>
                 </a>
-                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                    data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item active" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <h6 class="collapse-header">Reportes</h6>
+                        <a class="collapse-item" href="buttons.html">Anual</a>
+                        <a class="collapse-item" href="buttons.html">Mensual</a>
+                        <a class="collapse-item" href="buttons.html">Bimestral</a>
+                        <a class="collapse-item" href="cards.html">Semestral</a>
+                        <a class="collapse-item" href="cards.html">Semanall</a>
                     </div>
                 </div>
             </li>
@@ -78,64 +83,67 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Donadores</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <h6 class="collapse-header">Circulos</h6>
+                        <a class="collapse-item" href="utilities-color.html">Nivel 1</a>
+                        <a class="collapse-item" href="utilities-border.html">Nivel 2</a>
+                        <a class="collapse-item" href="utilities-animation.html">Nivel 3</a>
+                        <a class="collapse-item" href="utilities-other.html">Nivel 4</a>
+                        <h6 class="collapse-header">Tipo</h6>
+                        <a class="collapse-item" href="utilities-color.html">Graduados</a>
+                        <a class="collapse-item" href="utilities-border.html">Trabajadores</a>
+                        <a class="collapse-item" href="utilities-animation.html">Estudiantes</a>
+                        <a class="collapse-item" href="utilities-other.html">Padres de familia</a>
+                        <a class="collapse-item" href="utilities-other.html">Otros</a>
                     </div>
                 </div>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilitie"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Informacion</span>
+                </a>
+                <div id="collapseUtilitie" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Contactos</h6>
+                        <a class="collapse-item" href="direcciones.php">Direcciones</a>
+                        <a class="collapse-item" href="tarjetas.php">Tarjetas</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Graficos</span></a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
-            </div>
+                Usuarios
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
+                
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Agregar</span></a>
             </li>
 
-            <!-- Divider -->
+              <!-- Nav Item - Tables -->
+              <li class="nav-item active">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Buscar</span></a>
+            </li>
+
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
@@ -156,9 +164,11 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
                     <form
@@ -268,8 +278,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -280,8 +289,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -292,8 +300,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -325,8 +332,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -355,186 +361,206 @@
 
                 </nav>
                 <!-- End of Topbar -->
+                 <!-- Begin Page Content -->
+                 <div class="container-fluid">
+                    
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Earnings (Monthly)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Earnings (Annual)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Pending Requests</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+
+                <div class="row">
+
+                        <div class="col-xl-8 col-lg-7">
+
+                            <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Graficas  bonitas</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Donut Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Distribucion de Donadores</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Buttons</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Donaciones y Donadores</h1>
+                    
 
-                    <div class="row">
-
-                        <div class="col-lg-6">
-
-                            <!-- Circle Buttons -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Circle Buttons</h6>
-                                </div>
-                                <div class="card-body">
-                                    <p>Use Font Awesome Icons (included with this theme package) along with the circle
-                                        buttons as shown in the examples below!</p>
-                                    <!-- Circle Buttons (Default) -->
-                                    <div class="mb-2">
-                                        <code>.btn-circle</code>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-circle">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-success btn-circle">
-                                        <i class="fas fa-check"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-info btn-circle">
-                                        <i class="fas fa-info-circle"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-warning btn-circle">
-                                        <i class="fas fa-exclamation-triangle"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-circle">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
-                                    <!-- Circle Buttons (Small) -->
-                                    <div class="mt-4 mb-2">
-                                        <code>.btn-circle .btn-sm</code>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-circle btn-sm">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-success btn-circle btn-sm">
-                                        <i class="fas fa-check"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-info btn-circle btn-sm">
-                                        <i class="fas fa-info-circle"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-warning btn-circle btn-sm">
-                                        <i class="fas fa-exclamation-triangle"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
-                                    <!-- Circle Buttons (Large) -->
-                                    <div class="mt-4 mb-2">
-                                        <code>.btn-circle .btn-lg</code>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-circle btn-lg">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-success btn-circle btn-lg">
-                                        <i class="fas fa-check"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-info btn-circle btn-lg">
-                                        <i class="fas fa-info-circle"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-warning btn-circle btn-lg">
-                                        <i class="fas fa-exclamation-triangle"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-circle btn-lg">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Brand Buttons -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Brand Buttons</h6>
-                                </div>
-                                <div class="card-body">
-                                    <p>Google and Facebook buttons are available featuring each company's respective
-                                        brand color. They are used on the user login and registration pages.</p>
-                                    <p>You can create more custom buttons by adding a new color variable in the
-                                        <code>_variables.scss</code> file and then using the Bootstrap button variant
-                                        mixin to create a new style, as demonstrated in the <code>_buttons.scss</code>
-                                        file.</p>
-                                    <a href="#" class="btn btn-google btn-block"><i class="fab fa-google fa-fw"></i>
-                                        .btn-google</a>
-                                    <a href="#" class="btn btn-facebook btn-block"><i
-                                            class="fab fa-facebook-f fa-fw"></i> .btn-facebook</a>
-
-                                </div>
-                            </div>
-
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Donaciones</h6>
                         </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Apellido</th>
+                                            <th scope="col">Apellido</th>
+                                            <th scope="col">Categoria</th>
+                                            <th scope="col">Prometido</th>
+                                            <th scope="col">Abonado</th>
+                                            <th scope="col">Fecha abono</th>
+                                            <th scope="col">Fecha limite</th>
+                                            <th scope="col">Forma de pago</th>
+                                            <th scope="col">Plazos</th>
+                                            <th scope="col">Plazos abonados</th>
+                                            <th scope="col">Eliminar</th>
+                                            <th scope="col">Modificar</th>
+                                        </tr>
 
-                        <div class="col-lg-6">
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                          include('../php/donacion_dao.php');
+                                          $DAO = new DonacionDAO();
+                                          $res = $DAO->cargarDonacionesFull();
+                                          while ($fila = mysqli_fetch_assoc($res)) {
+                                            printf("<tr>
+                                                      <td>" . $fila['iddonaciones'] . "</td>
+                                                      <td>" . $fila['nombre'] . "</td>
+                                                      <td>" . $fila['ap1'] . "</td>
+                                                      <td>" . $fila['ap2'] . "</td>
+                                                      <td>" . $fila['categ'] . "</td>
+                                                      <td>" . $fila['prometido'] . "</td>
+                                                      <td>" . $fila['abonado'] . "</td>
+                                                      <td>" . $fila['fecha_abono'] . "</td>
+                                                      <td>" . $fila['fecha_limite'] . "</td>
+                                                      <td>" . $fila['formapago'] . "</td>
+                                                      <td>" . $fila['plazos'] . "</td>
+                                                      <td>" . $fila['plazos_abonados'] . "</td>
+                                                      <td>
+                                                      <a href='vistas/cambios.html' class='btn btn-info' role='button'>Editar</a>
+                                                      </td>
+                                                      <td>
+                                                      <a href='../scripts_php/procesar_baja.php?nc=%s' class='btn btn-danger' role='button'>Eliminar</a>
+                                                      </td>
+                                                  </tr>", $fila['iddonaciones']);
+                                          }
+                                          ?>
 
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Split Buttons with Icon</h6>
-                                </div>
-                                <div class="card-body">
-                                    <p>Works with any button colors, just use the <code>.btn-icon-split</code> class and
-                                        the markup in the examples below. The examples below also use the
-                                        <code>.text-white-50</code> helper class on the icons for additional styling,
-                                        but it is not required.</p>
-                                    <a href="#" class="btn btn-primary btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-flag"></i>
-                                        </span>
-                                        <span class="text">Split Button Primary</span>
-                                    </a>
-                                    <div class="my-2"></div>
-                                    <a href="#" class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-check"></i>
-                                        </span>
-                                        <span class="text">Split Button Success</span>
-                                    </a>
-                                    <div class="my-2"></div>
-                                    <a href="#" class="btn btn-info btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-info-circle"></i>
-                                        </span>
-                                        <span class="text">Split Button Info</span>
-                                    </a>
-                                    <div class="my-2"></div>
-                                    <a href="#" class="btn btn-warning btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-exclamation-triangle"></i>
-                                        </span>
-                                        <span class="text">Split Button Warning</span>
-                                    </a>
-                                    <div class="my-2"></div>
-                                    <a href="#" class="btn btn-danger btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Split Button Danger</span>
-                                    </a>
-                                    <div class="my-2"></div>
-                                    <a href="#" class="btn btn-secondary btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-arrow-right"></i>
-                                        </span>
-                                        <span class="text">Split Button Secondary</span>
-                                    </a>
-                                    <div class="my-2"></div>
-                                    <a href="#" class="btn btn-light btn-icon-split">
-                                        <span class="icon text-gray-600">
-                                            <i class="fas fa-arrow-right"></i>
-                                        </span>
-                                        <span class="text">Split Button Light</span>
-                                    </a>
-                                    <div class="mb-4"></div>
-                                    <p>Also works with small and large button classes!</p>
-                                    <a href="#" class="btn btn-primary btn-icon-split btn-sm">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-flag"></i>
-                                        </span>
-                                        <span class="text">Split Button Small</span>
-                                    </a>
-                                    <div class="my-2"></div>
-                                    <a href="#" class="btn btn-primary btn-icon-split btn-lg">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-flag"></i>
-                                        </span>
-                                        <span class="text">Split Button Large</span>
-                                    </a>
-                                </div>
+                                    </tbody>
+                                </table>
                             </div>
-
                         </div>
-
                     </div>
 
                 </div>
@@ -593,6 +619,19 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
+<script src="js/demo/chart-bar-demo.js"></script>
 
 </body>
 

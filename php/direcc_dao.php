@@ -1,7 +1,7 @@
 <?php
 include('conexion_bd.php');
 
-class DonadorDAO
+class DireccionDAO
 {
     private $conexion;
 
@@ -27,7 +27,7 @@ class DonadorDAO
     //----------------------------BAJAS-------------------------
     public function eliminarDireccion($id)
     {
-        $sql = "DELETE FROM direcciones WHERE id ='$id'";
+        $sql = "DELETE FROM direcciones WHERE iddirecciones ='$id'";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
             echo "PERFECTO, CASI SOY ISC :)";

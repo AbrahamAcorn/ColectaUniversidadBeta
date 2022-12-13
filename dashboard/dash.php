@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <?php
+<?php
   require_once('blank.html');
   ?>
   <br>
