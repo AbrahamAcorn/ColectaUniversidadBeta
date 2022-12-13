@@ -4,6 +4,6 @@
     session_unset();
     session_destroy();
 
-    header("location: ../vistas/index.php");
+    header("location: ../dashboard/index.php");
 
 ?>

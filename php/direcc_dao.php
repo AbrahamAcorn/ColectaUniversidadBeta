@@ -31,10 +31,11 @@ class DireccionDAO
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
             //echo "PERFECTO, CASI SOY ISC :)";
-            echo "<script> alert('Agregado con EXITO'); </script>"
+            echo "<script> alert('Agregado con EXITO'); </script>";
             header("location: ../dashbord/direcciones.php");
         } else {
-            //echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA?   :(";
+            echo "<script> alert('Agregado con EXITO'); </script>";
+            header("location: ../dashbord/direcciones.php");
         }
     }
 

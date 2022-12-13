@@ -1,6 +1,5 @@
 <?php
     session_start();
-
     if($_SESSION['autenticado'] == false){
         header("location:login/login.html");
     }
@@ -338,7 +337,11 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                <?php
+                                echo($_SESSION['usuario'])
+                                ?>
+                                </span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -386,12 +389,13 @@
                                     <thead class="table-primary">
                                         <tr>
                                             <th scope="col">ID</th>
-                                            <th scope="col">Calle y numero</th>
-                                            <th scope="col">Colonia</th>
-                                            <th scope="col">Loacalidad</th>
-                                            <th scope="col">Estado</th>
-                                            <th scope="col">Pais</th>
-                                            <th scope="col">CP</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Ap paterno</th>
+                                            <th scope="col">Ap materno</th>
+                                            <th scope="col">Telefono</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Categoria</th>
+                                            <th scope="col">Graduacion</th>
                                             <th scope="col">Eliminar</th>
                                             <th scope="col">Modificar</th>
                                         </tr>
@@ -399,25 +403,26 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                          include('../php/direcc_dao.php');
-                                          $DAO = new DireccionDAO();
-                                          $res = $DAO->cargarDirecciones();
+                                          include('../php/donador_dao.php');
+                                          $DAO = new DonadorDAO();
+                                          $res = $DAO->cargarDonadores();
                                           while ($fila = mysqli_fetch_assoc($res)) {
                                             printf("<tr>
-                                                      <td>" . $fila['iddirecciones'] . "</td>
-                                                      <td>" . $fila['direccion'] . "</td>
-                                                      <td>" . $fila['colonia'] . "</td>
-                                                      <td>" . $fila['localidad'] . "</td>
-                                                      <td>" . $fila['estado'] . "</td>
-                                                      <td>" . $fila['pais'] . "</td>
-                                                      <td>" . $fila['cp'] . "</td>
+                                                      <td>" . $fila['id'] . "</td>
+                                                      <td>" . $fila['nombre'] . "</td>
+                                                      <td>" . $fila['ap1'] . "</td>
+                                                      <td>" . $fila['ap2'] . "</td>
+                                                      <td>" . $fila['tel'] . "</td>
+                                                      <td>" . $fila['email'] . "</td>
+                                                      <td>" . $fila['categ'] . "</td>
+                                                      <td>" . $fila['graduate'] . "</td>
                                                       <td>
                                                       <a href='vistas/cambios.html' class='btn btn-info' role='button'>Editar</a>
                                                       </td>
                                                       <td>
-                                                      <a href='../php/baja_direcc.php?id=%s' class='btn btn-danger' role='button'>Eliminar</a>
+                                                      <a href='' class='btn btn-danger' role='button'>Eliminar</a>
                                                       </td>
-                                                  </tr>", $fila['iddirecciones']);
+                                                  </tr>", $fila['id']);
                                           }
                                           ?>
 

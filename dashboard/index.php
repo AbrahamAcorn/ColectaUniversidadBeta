@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if($_SESSION['autenticado'] == false){
+        header("location:../login/login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,18 +15,23 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dashboard</title>
+    <title>Donaciones</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
-<body id="page-top" >
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -31,106 +42,114 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fa-sharp fa-solid fa-hashtag"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Administracion<sup>UB</sup></div>
+                <div class="sidebar-brand-text mx-3">Universidad<sup>B</sup></div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Información
+                Interface
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Donadores</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Info</h6>
-                        <a class="collapse-item" href="buttons.html">Direcciones</a>
-                        <a class="collapse-item" href="cards.html">Deudores</a>
-                        <a class="collapse-item" href="cards.html">Contactos</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Donaciones</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Info</h6>
-                        <a class="collapse-item" href="buttons.html">Atrasos</a>
-                        <a class="collapse-item" href="cards.html">Completos</a>
+                        <h6 class="collapse-header">Reportes</h6>
+                        <a class="collapse-item" href="buttons.html">Anual</a>
+                        <a class="collapse-item" href="buttons.html">Mensual</a>
+                        <a class="collapse-item" href="buttons.html">Bimestral</a>
+                        <a class="collapse-item" href="cards.html">Semestral</a>
+                        <a class="collapse-item" href="cards.html">Semanall</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Usuarios</span>
+                    <span>Donadores</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">CRUD</h6>
-                        <a class="collapse-item" href="utilities-color.html">Agregar</a>
-                        <a class="collapse-item" href="utilities-border.html">Editar</a>
-                        <a class="collapse-item" href="utilities-animation.html">Buscar</a>
-
-                    </div>
-                </div>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Reportes</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Circulos</h6>
-                        <a class="collapse-item" href="login.html">Circulo 1</a>
-                        <a class="collapse-item" href="register.html">Circulo 2</a>
-                        <a class="collapse-item" href="forgot-password.html">Circulo 3</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Totales</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="utilities-color.html">Nivel 1</a>
+                        <a class="collapse-item" href="utilities-border.html">Nivel 2</a>
+                        <a class="collapse-item" href="utilities-animation.html">Nivel 3</a>
+                        <a class="collapse-item" href="utilities-other.html">Nivel 4</a>
+                        <h6 class="collapse-header">Tipo</h6>
+                        <a class="collapse-item" href="utilities-color.html">Graduados</a>
+                        <a class="collapse-item" href="utilities-border.html">Trabajadores</a>
+                        <a class="collapse-item" href="utilities-animation.html">Estudiantes</a>
+                        <a class="collapse-item" href="utilities-other.html">Padres de familia</a>
+                        <a class="collapse-item" href="utilities-other.html">Otros</a>
                     </div>
                 </div>
             </li>
-
-            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilitie"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Informacion</span>
+                </a>
+                <div id="collapseUtilitie" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Contactos</h6>
+                        <a class="collapse-item" href="direcciones.php">Direcciones</a>
+                        <a class="collapse-item" href="tarjetas.php">Tarjetas</a>
+                    </div>
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Graficos</span></a>
             </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Usuarios
+
+                
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.php">
+            <li class="nav-item active">
+                <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tablas</span></a>
+                    <span>Agregar</span></a>
             </li>
 
-            <!-- Divider -->
+              <!-- Nav Item - Tables -->
+              <li class="nav-item active">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Buscar</span></a>
+            </li>
+
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
@@ -143,7 +162,7 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-            
+
             <!-- Main Content -->
             <div id="content">
 
@@ -151,14 +170,18 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -172,14 +195,18 @@
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -192,13 +219,15 @@
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
                                 </h6>
@@ -241,13 +270,15 @@
 
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
                                 <span class="badge badge-danger badge-counter">7</span>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
                                     Message Center
                                 </h6>
@@ -286,7 +317,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div>
@@ -303,12 +335,18 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                <?php
+                                echo($_SESSION['usuario'])
+                                ?>
+                                </span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
@@ -333,9 +371,8 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+                 <!-- Begin Page Content -->
+                 <div class="container-fluid">
                     
 
                     <!-- Page Heading -->
@@ -430,104 +467,114 @@
                     </div>
                 </div>
                 <!-- /.container-fluid -->
+
                 <div class="row">
 
-<div class="col-xl-8 col-lg-7">
+                        <div class="col-xl-8 col-lg-7">
 
-    <!-- Area Chart -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
-        </div>
-        <div class="card-body">
-            <div class="chart-area">
-                <canvas id="myAreaChart"></canvas>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Donut Chart -->
-<div class="col-xl-4 col-lg-5">
-    <div class="card shadow mb-4">
-        <!-- Card Header - Dropdown -->
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
-        </div>
-        <!-- Card Body -->
-        <div class="card-body">
-            <div class="chart-pie pt-4">
-                <canvas id="myPieChart"></canvas>
-            </div>
-            <hr>
-        </div>
-    </div>
-</div>
-</div>
-                <div class="container-fluid">
-
-
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Donaciones</h6>
+                            <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Graficas  bonitas</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
 
-                                    <table class="table-striped table-bordered" id="donadores">
-                                        <thead class="table-primary">
-                                            <tr>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">Nombre</th>
-                                                <th scope="col">Apellido</th>
-                                                <th scope="col">Apellido</th>
-                                                <th scope="col">Categoria</th>
-                                                <th scope="col">Prometido</th>
-                                                <th scope="col">Abonado</th>
-                                                <th scope="col">Fecha abono</th>
-                                                <th scope="col">Fecha limite</th>
-                                                <th scope="col">Forma de pago</th>
-                                                <th scope="col">Plazos</th>
-                                                <th scope="col">Plazos abonados</th>
-                                                <th scope="col">Eliminar</th>
-                                                <th scope="col">Modificar</th>
-                                            </tr>
+                        </div>
 
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            include('../php/donacion_dao.php');
-                                            $DAO = new DonacionDAO();
-                                            $res = $DAO->cargarDonacionesFull();
-                                            while ($fila = mysqli_fetch_assoc($res)) {
-                                                printf("<tr>
-                                                <td>" . $fila['iddonaciones'] . "</td>
-                                                <td>" . $fila['nombre'] . "</td>
-                                                <td>" . $fila['ap1'] . "</td>
-                                                <td>" . $fila['ap2'] . "</td>
-                                                <td>" . $fila['categ'] . "</td>
-                                                <td>" . $fila['prometido'] . "</td>
-                                                <td>" . $fila['abonado'] . "</td>
-                                                <td>" . $fila['fecha_abono'] . "</td>
-                                                <td>" . $fila['fecha_limite'] . "</td>
-                                                <td>" . $fila['formapago'] . "</td>
-                                                <td>" . $fila['plazos'] . "</td>
-                                                <td>" . $fila['plazos_abonados'] . "</td>
-                                                <td>
-                                                    <a href='vistas/cambios.html' class='btn btn-info' role='button'>Editar</a>
-                                                </td>
-                                                <td>
-                                                    <a href='../scripts_php/procesar_baja.php?nc=%s' class='btn btn-danger' role='button'>Eliminar</a>
-                                                </td>
-                                            </tr>", $fila['iddonaciones']);
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
+                        <!-- Donut Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Distribucion de Donadores</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Donaciones y Donadores</h1>
+                    
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Donaciones</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Apellido</th>
+                                            <th scope="col">Apellido</th>
+                                            <th scope="col">Categoria</th>
+                                            <th scope="col">Prometido</th>
+                                            <th scope="col">Abonado</th>
+                                            <th scope="col">Fecha abono</th>
+                                            <th scope="col">Fecha limite</th>
+                                            <th scope="col">Forma de pago</th>
+                                            <th scope="col">Plazos</th>
+                                            <th scope="col">Plazos abonados</th>
+                                            <th scope="col">Eliminar</th>
+                                            <th scope="col">Modificar</th>
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                          include('../php/donacion_dao.php');
+                                          $DAO = new DonacionDAO();
+                                          $res = $DAO->cargarDonacionesFull();
+                                          while ($fila = mysqli_fetch_assoc($res)) {
+                                            printf("<tr>
+                                                      <td>" . $fila['iddonaciones'] . "</td>
+                                                      <td>" . $fila['nombre'] . "</td>
+                                                      <td>" . $fila['ap1'] . "</td>
+                                                      <td>" . $fila['ap2'] . "</td>
+                                                      <td>" . $fila['categ'] . "</td>
+                                                      <td>" . $fila['prometido'] . "</td>
+                                                      <td>" . $fila['abonado'] . "</td>
+                                                      <td>" . $fila['fecha_abono'] . "</td>
+                                                      <td>" . $fila['fecha_limite'] . "</td>
+                                                      <td>" . $fila['formapago'] . "</td>
+                                                      <td>" . $fila['plazos'] . "</td>
+                                                      <td>" . $fila['plazos_abonados'] . "</td>
+                                                      <td>
+                                                      <a href='vistas/cambios.html' class='btn btn-info' role='button'>Editar</a>
+                                                      </td>
+                                                      <td>
+                                                      <a href='../scripts_php/procesar_baja.php?nc=%s' class='btn btn-danger' role='button'>Eliminar</a>
+                                                      </td>
+                                                  </tr>", $fila['iddonaciones']);
+                                          }
+                                          ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
@@ -536,7 +583,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
             </footer>
@@ -554,7 +601,8 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -566,13 +614,11 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="../php/cerrar_sesion.php">Logout</a>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -585,22 +631,17 @@
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/datatables-demo.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-    </script>
-</body>
-</main>
-<footer>
-    <!-- place footer here -->
-</footer>
+<!-- Page level custom scripts -->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
+<script src="js/demo/chart-bar-demo.js"></script>
 
 </body>
 
