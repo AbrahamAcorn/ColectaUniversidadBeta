@@ -30,8 +30,9 @@ class DireccionDAO
         $sql = "DELETE FROM direcciones WHERE iddirecciones ='$id'";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
-            echo "PERFECTO, CASI SOY ISC :)";
-            //echo "<script> alert('Agregado con EXITO'); </script>"
+            //echo "PERFECTO, CASI SOY ISC :)";
+            echo "<script> alert('Agregado con EXITO'); </script>"
+            header("location: ../dashbord/direcciones.php");
         } else {
             //echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA?   :(";
         }
