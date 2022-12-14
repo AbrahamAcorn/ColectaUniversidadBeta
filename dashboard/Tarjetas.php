@@ -1,7 +1,7 @@
 <?php
     session_start();
-    if($_SESSION['autenticado'] == true){
-        header("location:/donaciones.php");
+    if($_SESSION['autenticado'] == false){
+        header("location:../login/login.php");
     }
 ?>
 <!DOCTYPE html>
