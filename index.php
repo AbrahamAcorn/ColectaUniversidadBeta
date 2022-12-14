@@ -178,7 +178,8 @@
 
   <!-- DONATIVOS -->
   <section id="donativos" class="col-10 my-5 justify-content-center display-flex">
-    <form method="POST" id="formulario"  action="php/procesar_registro.php"  novalidate onsubmit="return validarFormulario();" >
+    <form method="POST" id="formulario" onsubmit="return validarFormulario();"  action="php/procesar_registro.php">
+    
       <section id="cantidad_a_donar" class="rounded shadow-lg">
         <div class="section_radios">
           <div class="container">
@@ -261,32 +262,32 @@
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="nombre">Nombre:</label>
-            <input type="text" class="form-control" name="caja_nombre" id="caja_nombre" onkeypress="ocultarMensajeNombre();">
+            <input type="text" class="form-control" name="caja_nombre" id="nombre" onkeypress="ocultarMensajeNombre();">
             <div class="invalid-tooltip" id="tool_nombre">Ingresa tu nombre</div>
             <div class="mensajes rounded" id="mensajes_nombre"></div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="primer_apellido">Primer Apellido:</label>
-            <input type="text" class="form-control" name="caja_ap1" id="caja_ap1" onkeypress="ocultarMensajePrimerAp();">
+            <input type="text" class="form-control" name="caja_ap1" id="primer_apellido" onkeypress="ocultarMensajePrimerAp();">
             <div class="mensajes rounded" id="mensajes_primer_apellido"></div>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="segundo_apellido">Segundo Apellido:</label>
-            <input type="text" class="form-control" name="caja_ap2" id="caja_ap2" onkeypress="ocultarMensajeSegundoAp();">
+            <input type="text" class="form-control" name="caja_ap2" id="segundo_apellido" onkeypress="ocultarMensajeSegundoAp();">
             <div class="mensajes rounded" id="mensajes_segundo_apellido"></div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="telefono">Telefono</label>
-            <input type="tel" class="form-control" name="caja_telefono" id="caja_telefono" onkeypress="ocultarMensajeTelefono();">
+            <input type="tel" class="form-control" name="caja_telefono" id="telefono" onkeypress="ocultarMensajeTelefono();">
             <div class="mensajes rounded" id="mensajes_telefono"></div>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="email">Email:</label>
-            <input type="text" class="form-control" name="caja_email" id="caja_email" onkeypress="ocultarMensajeCorreo();">
+            <input type="text" class="form-control" name="caja_email" id="email" onkeypress="ocultarMensajeCorreo();">
             <div class="mensajes rounded" id="mensajes_correo"></div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
@@ -305,7 +306,7 @@
         <div class="form-row justify-content-center">
           <div style="display: none;" class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-3" id="espacio_fecha_graduacion">
             <label for="fecha_graduacion">Fecha de Graduacion:</label>
-            <input type="date" class="form-control" name="fecha_graduacion" id="fecha_graduacion" onclick="ocultarMensajeFechaGraduacion();" onchange="ocultarMensajeFechaGraduacion();" onkeypress="ocultarMensajeFechaGraduacion();">
+            <input type="date" class="form-control" name="fecha_graduacion" id="caja_fecha_graduacion" onclick="ocultarMensajeFechaGraduacion();" onchange="ocultarMensajeFechaGraduacion();" onkeypress="ocultarMensajeFechaGraduacion();">
             <div class="mensajes rounded" id="mensajes_fecha_graduacion"></div>
           </div>
         </div>
@@ -472,9 +473,11 @@
             </div>
           </div>
         </div>
+
         <div class="form-row justify-content-center mb-5">
           <div class="g-recaptcha" data-sitekey="6LcvUXIjAAAAALIEWpqjJEcj7VFytXDpnvPdZvgT"></div>
         </div>
+        
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-10 col-xl-10 mb-3">
             <button type="submit" class="btn btn-primary btn-block">Enviar</button>
@@ -519,8 +522,8 @@
   </footer>
 
 
-  <script src="assets/scripts/javascript/scripts_index.js"></script>
-  <script src="assets/scripts/javascript/validacion_de_campos.js"></script>
+  <script src="assets/js/scripts_index.js"></script>
+  <script src="assets/js/validacion_de_campos.js"></script>
 
   <!-- BOOTSTRAP SCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
