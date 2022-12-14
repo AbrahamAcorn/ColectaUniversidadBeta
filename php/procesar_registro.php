@@ -89,9 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script> alert('Faltan datos'); </script>";
     }
 
-    echo (printf("direccion $direction--$col--$locali--$estate--$pais--$cp
-    ,tarjeta $nume--$banco--$vence, donador $name--$ap1--$ap2--$phone--$categ
-    --$graduate,donacion $promet--$fechabono--$fechalimite--$pago--$plazos--$plazosabon---$abono----"));
   // echo "<script> alert('Agregado con EXITO'); </script>";
     //header("Location:../index.php");
     $aDAO = new DonacionDAO();
