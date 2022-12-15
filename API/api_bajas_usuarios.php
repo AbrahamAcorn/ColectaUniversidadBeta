@@ -1,38 +1,41 @@
 <?php
-
-    include('../php/conexion_bd.php');
+    header('Content-Type: multipart/form-data');
+    include('conexion_bd.php');
 
     $con = new ConexionBD();
     $conexion = $con->getConexion();
-
     //var_dump($conexion);
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $cadena_JSON = file_get_contents('php://input'); //Recibe información a través de HTTP
+    if(isset($_POST['iduser'])) {
 
-        if($cadena_JSON == false) {
-            echo "No hay cadena JSON";
+        $iduser = $_POST['iduser'];
+
+        $sql = "DELETE FROM users WHERE iduser='$iduser';";
+
+        $res = mysqli_query($conexion, $sql);
+        //var_dump($res);
+
+        $respuesta = array();
+
+        if($res) {
+            //Todo bien
+            $respuesta['exito'] = true;
+            $respuesta['mensaje'] = "Registro eliminado";
+            $cad = json_encode($respuesta);
+            echo($cad);
+            //var_dump($cad);
         } else {
-            $datos = json_decode($cadena_JSON, true);
-            $nc = $datos['nc'];
-            $sql = "DELETE FROM Users WHERE ='$nc'";
-            $res = mysqli_query($conexion, $sql);
-
-            if($res) {
-                $respuesta['exito'] = true;
-                $respuesta['mensaje'] = "Eliminacion correcta";
-                $cad = json_encode($respuesta);
-                var_dump($cad);
-            } else {
-                $respuesta['exito'] = false;
-                $respuesta['mensaje'] = "Error en la eliminacion";
-                $cad = json_encode($respuesta);
-                var_dump($cad);
-            }
-        }        
-
+            //Todo mal
+            $respuesta['exito'] = false;
+            echo(die(mysqli_error($conexion)));
+            $respuesta['mensaje'] = "Fallo la eliminacion";
+            $cad = json_encode($respuesta);
+            echo($cad);
+            //var_dump($cad);
+            //die(mysqli_error($conexion));
+        }
     } else {
-        echo "No hay peticion HTTP";
+        echo("ERROR faltan datos");
     }
 
 ?>

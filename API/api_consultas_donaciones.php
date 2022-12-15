@@ -1,6 +1,6 @@
 <?php
 
-    include('../php/conexion_bd.php');
+    include('conexion_bd.php');
 
     $con = new ConexionBD();
     $conexion = $con->getConexion();

@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: multipart/form-data');
-    include('../php/conexion_bd.php');
+    include('conexion_bd.php');
 
     $con = new ConexionBD();
     $conexion = $con->getConexion();
@@ -23,9 +23,8 @@ header('Content-Type: multipart/form-data');
        isset($_POST['categ']) &
        isset($_POST['graduate']) &
        isset($_POST['promet']) &
-       isset($_POST['abono']) &
        isset($_POST['pago']) &
-       isset($_POST['plazos'])  ){
+       isset($_POST['plazos'])){
        
        $direction = $_POST['direction'];
             $col = $_POST['col'];
@@ -44,12 +43,13 @@ header('Content-Type: multipart/form-data');
             $categ = $_POST['categ'];
             $graduate = $_POST['graduate'];
             $promet = $_POST['promet'];
-            $abono = $_POST['abono'];
+            
             $fechabono = date('Y/m/d');
-            $fechalimite = date("Y/m/d",strtotime($fechabono."+ 1 YEAR"));
+            $fechalimite = date("Y/m/d", strtotime($fechabono . "+ 1 YEAR"));
+            $plazosabon = 1;
             $pago = $_POST['pago'];
             $plazos = $_POST['plazos'];
-            $plazosabon = 1;
+            $abono = (floatval($promet)/floatval($plazos));
 
             $sql = "CALL registra_todo('$direction', '$col','$locali','$estate'
             ,'$pais','$cp','$nume','$banco','$vence','$name','$ap1','$ap2','$phone',
@@ -71,13 +71,15 @@ header('Content-Type: multipart/form-data');
                 //Todo mal
                 $respuesta['exito'] = false;
                 echo(die(mysqli_error($conexion)));
-                $respuesta['mensaje'] = "Error en la insercion datos ";
+                $respuesta['mensaje'] = "Error en la insercion";
                 $cad = json_encode($respuesta);
                 echo($cad);
-                var_dump($cad);
-                die(mysqli_error($conexion));
+                //var_dump($cad);
+                //die(mysqli_error($conexion));
             }
        
        }else{
-       echo("ERROR datos erroneos");
+       
+       echo("ERROR");
        }
+?>

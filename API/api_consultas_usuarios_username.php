@@ -1,35 +1,34 @@
 <?php
-    header('Content-Type: multipart/form-data');
     include('conexion_bd.php');
 
     $con = new ConexionBD();
     $conexion = $con->getConexion();
-    //var_dump($conexion);
 
-    if(isset($_POST['username']) &
-       isset($_POST['passaword']) &
-       isset($_POST['email']) &
-       isset($_POST['iduser'])) {
-
+    //var_dump($conexion);   
+    if(isset($_POST['username'])){
         $usern = $_POST['username'];
-        $psw = $_POST['passaword'];
-        $email = $_POST['email'];
-        $id=$_POST['iduser'];
 
-        $sql = "UPDATE `users` SET `username`='$usern',`passaword`='$psw',`email`='$email' WHERE iduser=$id;";
+        $sql = "SELECT * FROM users where username LIKE '%$usern%';";
 
         $res = mysqli_query($conexion, $sql);
         //var_dump($res);
 
         $respuesta = array();
 
+        $datos['users'] = array();
         if($res) {
             //Todo bien
-            $respuesta['exito'] = true;
-            $respuesta['mensaje'] = "Modificacion correcta";
-            $cad = json_encode($respuesta);
-            echo($cad);
-            //var_dump($cad);
+            while($fila = mysqli_fetch_assoc($res)) {
+                $alumno = array();
+                $alumno['iduser'] = $fila['iduser'];
+                $alumno['username'] = $fila['username'];
+                $alumno['passaword'] = $fila['passaword'];
+                $alumno['email'] = $fila['email'];
+
+                array_push($datos['users'], $alumno);
+            }
+
+            echo json_encode($datos['users']);
         } else {
             //Todo mal
             $respuesta['exito'] = false;
