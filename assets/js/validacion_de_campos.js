@@ -1,4 +1,3 @@
-//FORMA DE DAR RETROALIMENTACION DE LA CANTIDAD TECLEADA
 function comprobarCantidad() {
     let dato = document.getElementById('caja_otra_cantidad');
     if(dato.value < 10 || dato.value > 1000000) {
@@ -105,40 +104,27 @@ function ocultarMensajeTerminos() {
     document.getElementById("mensajes_terminos").style.display = "none";
 }
 
-var formula = document.getElementById(formulario);
-
-formula.addEventListener('submit', function(e){
+var formula = document.getElementById('formulario');
+formula.addEventListener('submit', e => {
     e.preventDefault();
-    var data=new FormData(formula);
-
-    fetch('../../php/procesar_registro.php',{
-        method: 'POST',
-        body: datos
-    })
-    .then(res => res.json())
-})
-
-
-
-function validarFormulario() {
     let todoCorrecto = true;
 
     //VALIDACION DE RADIOS DE CANTIDAD Y CAJA DE CANTIDAD
     let radioSeleccionado = document.querySelector('input[name="budget"]:checked');
     let valorCajaCantidad = document.getElementById('caja_otra_cantidad').value;
-    if(radioSeleccionado) {
+    if (radioSeleccionado) {
         document.getElementById('mensajes_radio_cantidades').style.display = "none";
-        if(radioSeleccionado.value == "otro") {
-            if(valorCajaCantidad == ""){
+        if (radioSeleccionado.value == "otro") {
+            if (valorCajaCantidad == "") {
                 document.getElementById("mensajes_cantidad").innerHTML = "* Ingresa una cantidad";
                 document.getElementById("mensajes_cantidad").style.display = "block";
                 todoCorrecto = false;
             } else {
-                if(valorCajaCantidad < 10) {
+                if (valorCajaCantidad < 10) {
                     document.getElementById("mensajes_cantidad").innerHTML = "* Ingresa una cantidad mayor a 10";
                     document.getElementById("mensajes_cantidad").style.display = "block";
                     todoCorrecto = false;
-                } else if(valorCajaCantidad > 1000000){
+                } else if (valorCajaCantidad > 1000000) {
                     document.getElementById("mensajes_cantidad").innerHTML = "* Ingresa una cantidad menor a 1000000";
                     document.getElementById("mensajes_cantidad").style.display = "block";
                     todoCorrecto = false;
@@ -154,11 +140,11 @@ function validarFormulario() {
 
     //VALIDACION DE NOMBRE
     let nombre = document.getElementById("nombre").value;
-    if(nombre.replaceAll(" ", "") == "") {
+    if (nombre.replaceAll(" ", "") == "") {
         document.getElementById("mensajes_nombre").innerHTML = "* Ingresa tu nombre";
         document.getElementById("mensajes_nombre").style.display = "block";
         todoCorrecto = false;
-    } else if(nombre.length > 50) {
+    } else if (nombre.length > 50) {
         document.getElementById("mensajes_nombre").innerHTML = "* No debes exceder los 50 caracteres";
         document.getElementById("mensajes_nombre").style.display = "block";
         todoCorrecto = false;
@@ -170,11 +156,11 @@ function validarFormulario() {
 
     //VALIDACION DE PRIMER APELLIDO
     let primerAp = document.getElementById("primer_apellido").value;
-    if(primerAp.replaceAll(" ", "") == "") {
+    if (primerAp.replaceAll(" ", "") == "") {
         document.getElementById("mensajes_primer_apellido").innerHTML = "* Ingresa tu primer apellido";
         document.getElementById("mensajes_primer_apellido").style.display = "block";
         todoCorrecto = false;
-    } else if(primerAp.length > 50) {
+    } else if (primerAp.length > 50) {
         document.getElementById("mensajes_primer_apellido").innerHTML = "* No debes exceder los 50 caracteres";
         document.getElementById("mensajes_primer_apellido").style.display = "block";
         todoCorrecto = false;
@@ -186,11 +172,11 @@ function validarFormulario() {
 
     //VALIDACION DE SEGUNDO APELLIDO
     let segundoAp = document.getElementById("segundo_apellido").value;
-    if(segundoAp.replaceAll(" ", "") == "") {
+    if (segundoAp.replaceAll(" ", "") == "") {
         document.getElementById("mensajes_segundo_apellido").innerHTML = "* Ingresa tu segundo apellido";
         document.getElementById("mensajes_segundo_apellido").style.display = "block";
         todoCorrecto = false;
-    } else if(segundoAp.length > 50) {
+    } else if (segundoAp.length > 50) {
         document.getElementById("mensajes_segundo_apellido").innerHTML = "* No debes exceder los 50 caracteres";
         document.getElementById("mensajes_segundo_apellido").style.display = "block";
         todoCorrecto = false;
@@ -202,15 +188,15 @@ function validarFormulario() {
 
     //VALIDACION DE TELEFONO
     let telefono = document.getElementById("telefono").value;
-    if(telefono.replaceAll(" ", "") == "") {
+    if (telefono.replaceAll(" ", "") == "") {
         document.getElementById("mensajes_telefono").innerHTML = "* Ingresa tu numero telefonico";
         document.getElementById("mensajes_telefono").style.display = "block";
         todoCorrecto = false;
-    } else if(telefono.length < 10) {
+    } else if (telefono.length < 10) {
         document.getElementById("mensajes_telefono").innerHTML = "*  debes ingresar 10 digitos";
         document.getElementById("mensajes_telefono").style.display = "block";
         todoCorrecto = false;
-    } else if(telefono.length > 10) {
+    } else if (telefono.length > 10) {
         document.getElementById("mensajes_telefono").innerHTML = "* No debes exceder los 10 digitos";
         document.getElementById("mensajes_telefono").style.display = "block";
         todoCorrecto = false;
@@ -222,11 +208,11 @@ function validarFormulario() {
 
     //VALIDACION DE CORREO
     let correo = document.getElementById("email").value;
-    if(correo.replaceAll(" ", "") == "") {
+    if (correo.replaceAll(" ", "") == "") {
         document.getElementById("mensajes_correo").innerHTML = "* Ingresa tu email";
         document.getElementById("mensajes_correo").style.display = "block";
         todoCorrecto = false;
-    } else if(correo.length > 30) {
+    } else if (correo.length > 30) {
         document.getElementById("mensajes_correo").innerHTML = "* No debes exceder los 30 caracteres";
         document.getElementById("mensajes_correo").style.display = "block";
         todoCorrecto = false;
@@ -236,51 +222,18 @@ function validarFormulario() {
         todoCorrecto = false;
     }
 
-    //VALIDACION DE CATEGORIA Y FECHA DE GRADUACION
-    let selectCategoria = document.getElementById('select_categoria').selectedIndex;
-    let valorCajaFecha = document.getElementById('caja_fecha_graduacion').value;
-    if(selectCategoria == "0") {
-        document.getElementById("mensajes_categoria").innerHTML = "* Selecciona una categoria";
-        document.getElementById("mensajes_categoria").style.display = "block";
-        todoCorrecto = false;
-    } else if(selectCategoria == "2") {
-        document.getElementById("mensajes_categoria").style.display = "none";
-        if(!/\d{4}-\d{2}-\d{2}$/g.test(valorCajaFecha)){
-            document.getElementById("mensajes_fecha_graduacion").innerHTML = "* Fecha no valida o incompleta";
-            document.getElementById("mensajes_fecha_graduacion").style.display = "block";
-            todoCorrecto = false;
-        } else 
-            document.getElementById("mensajes_fecha_graduacion").style.display = "none";
-    } else 
-        document.getElementById('mensajes_categoria').style.display = "none";
-
-    //VALIDACION DE BANCO
-    let selectBanco = document.getElementById('select_banco').selectedIndex;
-    if(selectBanco == "0") {
-        document.getElementById("mensajes_banco").style.display = "block";
-        todoCorrecto = false;
-    } else 
-        document.getElementById('mensajes_banco').style.display = "none";
-
-    //VALIDACION DE METODO PAGO
-    let selectMetodoPago = document.getElementById('select_metodo_pago').selectedIndex;
-    if(selectMetodoPago == "0") {
-        document.getElementById("mensajes_metodo_pago").style.display = "block";
-        todoCorrecto = false;
-    } else 
-        document.getElementById('mensajes_metodo_pago').style.display = "none";
 
     //VALIDACION DE NUMERO DE TARJETA
     let tarjeta = document.getElementById("numero_de_tarjeta").value;
-    if(tarjeta.replaceAll(" ", "") == "") {
+    if (tarjeta.replaceAll(" ", "") == "") {
         document.getElementById("mensajes_num_tarjeta").innerHTML = "* Ingresa los 16 digitos de tu tarjeta";
         document.getElementById("mensajes_num_tarjeta").style.display = "block";
         todoCorrecto = false;
-    } else if(tarjeta.length < 16) {
+    } else if (tarjeta.length < 16) {
         document.getElementById("mensajes_num_tarjeta").innerHTML = "*  debes ingresar 16 digitos";
         document.getElementById("mensajes_num_tarjeta").style.display = "block";
         todoCorrecto = false;
-    } else if(tarjeta.length > 16) {
+    } else if (tarjeta.length > 16) {
         document.getElementById("mensajes_num_tarjeta").innerHTML = "* No debes exceder 16 digitos";
         document.getElementById("mensajes_num_tarjeta").style.display = "block";
         todoCorrecto = false;
@@ -292,7 +245,7 @@ function validarFormulario() {
 
     //VALIDACION DE VENCIMIENTO
     let vencimiento = document.getElementById("vencimiento").value;
-    if(vencimiento.replaceAll(" ", "") == "") {
+    if (vencimiento.replaceAll(" ", "") == "") {
         document.getElementById("mensajes_vencimiento").innerHTML = "* Ingresa la fecha de vencimiento de tu tarjeta";
         document.getElementById("mensajes_vencimiento").style.display = "block";
         todoCorrecto = false;
@@ -304,14 +257,14 @@ function validarFormulario() {
 
     //VALIDACION DE RADIOS DE PLAZO
     let radioSeleccionadoPlazo = document.querySelector('input[name="plazo"]:checked');
-    if(radioSeleccionadoPlazo) {
+    if (radioSeleccionadoPlazo) {
         document.getElementById('mensajes_plazo').style.display = "none";
-        if(radioSeleccionadoPlazo.id == "radioPlazoSi") {
+        if (radioSeleccionadoPlazo.id == "radioPlazoSi") {
             let selectPlazos = document.getElementById('select_mensualidades').selectedIndex;
-            if(selectPlazos == "0") {
+            if (selectPlazos == "0") {
                 document.getElementById("mensajes_mensualidades").style.display = "block";
                 todoCorrecto = false;
-            } else 
+            } else
                 document.getElementById('mensajes_mensualidades').style.display = "none";
         }
     } else {
@@ -321,7 +274,7 @@ function validarFormulario() {
 
     //VALIDACION DE RADIOS DE COMPROBANTE
     let radioSeleccionadoComprobante = document.querySelector('input[name="comprobante"]:checked');
-    if(radioSeleccionadoComprobante) {
+    if (radioSeleccionadoComprobante) {
         document.getElementById('mensajes_comprobante').style.display = "none";
     } else {
         document.getElementById('mensajes_comprobante').style.display = "block";
@@ -330,27 +283,23 @@ function validarFormulario() {
 
     //VALIDACION DE CALLE
     let calle = document.getElementById("calle").value;
-    if(calle.replaceAll(" ", "") == "") {
+    if (calle.replaceAll(" ", "") == "") {
         document.getElementById("mensajes_calle").innerHTML = "* Ingresa el nombre de tu calle";
         document.getElementById("mensajes_calle").style.display = "block";
         todoCorrecto = false;
-    } else if(calle.length > 50) {
+    } else if (calle.length > 50) {
         document.getElementById("mensajes_calle").innerHTML = "* No debes exceder los 50 caracteres";
-        document.getElementById("mensajes_calle").style.display = "block";
-        todoCorrecto = false;
-    } else if (!/^[a-zA-ZäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.]+(\ [a-zA-ZäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ#0-9]+)*$/g.test(calle)) {
-        document.getElementById("mensajes_calle").innerHTML = "* No debes ingresar caracteres especiales";
         document.getElementById("mensajes_calle").style.display = "block";
         todoCorrecto = false;
     }
 
     //VALIDACION DE COLONIA
     let colonia = document.getElementById("colonia").value;
-    if(colonia.replaceAll(" ", "") == "") {
+    if (colonia.replaceAll(" ", "") == "") {
         document.getElementById("mensajes_colonia").innerHTML = "* Ingresa el nombre de tu colonia";
         document.getElementById("mensajes_colonia").style.display = "block";
         todoCorrecto = false;
-    } else if(colonia.length > 50) {
+    } else if (colonia.length > 50) {
         document.getElementById("mensajes_colonia").innerHTML = "* No debes exceder los 50 caracteres";
         document.getElementById("mensajes_colonia").style.display = "block";
         todoCorrecto = false;
@@ -362,11 +311,11 @@ function validarFormulario() {
 
     //VALIDACION DE MUNICIPIO
     let municipio = document.getElementById("municipio").value;
-    if(municipio.replaceAll(" ", "") == "") {
+    if (municipio.replaceAll(" ", "") == "") {
         document.getElementById("mensajes_municipio").innerHTML = "* Ingresa el nombre de tu municipio";
         document.getElementById("mensajes_municipio").style.display = "block";
         todoCorrecto = false;
-    } else if(municipio.length > 50) {
+    } else if (municipio.length > 50) {
         document.getElementById("mensajes_municipio").innerHTML = "* No debes exceder los 50 caracteres";
         document.getElementById("mensajes_municipio").style.display = "block";
         todoCorrecto = false;
@@ -378,15 +327,15 @@ function validarFormulario() {
 
     //VALIDACION DE CP
     let cp = document.getElementById("cp").value;
-    if(cp.replaceAll(" ", "") == "") {
+    if (cp.replaceAll(" ", "") == "") {
         document.getElementById("mensajes_cp").innerHTML = "* Ingresa tu codigo postal";
         document.getElementById("mensajes_cp").style.display = "block";
         todoCorrecto = false;
-    } else if(cp.length < 5) {
+    } else if (cp.length < 5) {
         document.getElementById("mensajes_cp").innerHTML = "* Debes ingresar los 5 digitos";
         document.getElementById("mensajes_cp").style.display = "block";
         todoCorrecto = false;
-    } else if(cp.length > 5) {
+    } else if (cp.length > 5) {
         document.getElementById("mensajes_cp").innerHTML = "* No debes exceder los 5 digitos";
         document.getElementById("mensajes_cp").style.display = "block";
         todoCorrecto = false;
@@ -398,30 +347,45 @@ function validarFormulario() {
 
     //VALIDACION DE ESTADO
     let selectEstado = document.getElementById('select_estado').selectedIndex;
-    if(selectEstado == "0") {
+    if (selectEstado == "0") {
         document.getElementById("mensajes_estado").style.display = "block";
         todoCorrecto = false;
-    } else 
+    } else
         document.getElementById('mensajes_estado').style.display = "none";
 
     //VALIDACION DE PAIS
     let selectPais = document.getElementById('select_pais').selectedIndex;
-    if(selectPais == "0") {
+    if (selectPais == "0") {
         document.getElementById("mensajes_pais").style.display = "block";
         todoCorrecto = false;
-    } else 
+    } else
         document.getElementById('mensajes_pais').style.display = "none";
 
     //VALIDACION DE CHECK TERMINOS
     let checkTerminos = document.getElementById('terminos');
-    if(checkTerminos.checked)
+    if (checkTerminos.checked)
         document.getElementById('mensajes_terminos').style.display = "none";
     else {
         document.getElementById('mensajes_terminos').style.display = "block";
         todoCorrecto = false;
     }
-    //return todoCorrecto;
-    if(todoCorrecto){
+    //console.log("pues el listener jala")
 
+    var data = new FormData(formula);
+    data.append("nombre", $("#nombre").val());
+    data.append("primer_apellido", $("#primer_apellido").val());
+    data.append("segundo_apellido", $("#segundo_apellido").val());
+
+    if (todoCorrecto) {
+        pide = {
+            method: 'POST',
+            body: data,
+        }
+        fetch('../colectaubeta/php/procesar_registro.php', pide)
+            .then(res => response.json)
+            .then(res => {
+
+            }).catch(error => console.log('error', error));
     }
-}
+
+});

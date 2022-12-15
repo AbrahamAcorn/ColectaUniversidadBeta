@@ -71,8 +71,8 @@ class DonacionDAO
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
             //echo "PERFECTO, CASI SOY ISC :)";
-            echo "<script> alert('Agregado con EXITO'); </script>";
-            //header("location:../vista/formulario_consultas.php");
+            //echo "<script> alert('Agregado con EXITO'); </script>";
+            //header("location:../index.php");
         } else {
             //echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA?   :(";
             echo mysqli_error($this->conexion->getConexion());

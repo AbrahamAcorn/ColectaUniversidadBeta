@@ -19,8 +19,8 @@
   
   <!-- CUSTOM CSS -->
   <link rel="stylesheet" href="assets/css/index.css">
-
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
 </head>
 
 <body>
@@ -28,7 +28,7 @@
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img src="assets/img/logo.png" style="width: 25%;">
+        <img src="assets/img/Logo.png" style="width: 25%;">
         Universidad Beta
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
           <div class="col-sm-6 text-center justify-content-center align-self-center">
             <h1>DONA AHORA</h1>
             <p>Con tu donativo ayudas a que cientos de jovenes estudienates con dificultades economicas logren concluir con exito sus estudios universitarios.</p>
-            <a href="index.html#donativos" class="btn btn-outline-primary btn-lg text-white">
+            <a href="assets/index.html#donativos" class="btn btn-outline-primary btn-lg text-white">
               Quiero donar
             </a>
           </div>
@@ -176,10 +176,10 @@
     </div>
   </section>
 
-  <!-- DONATIVOS -->
+   DONATIVOS -->
   <section id="donativos" class="col-10 my-5 justify-content-center display-flex">
-    <form method="POST" id="formulario" onsubmit="return validarFormulario();"  action="php/procesar_registro.php">
-    
+    <form method="POST" id="formulario" name="formulario">
+      <!--onsubmit="return validarFormulario();"-->
       <section id="cantidad_a_donar" class="rounded shadow-lg">
         <div class="section_radios">
           <div class="container">
@@ -242,7 +242,7 @@
                     <input class="checkbox-budget" value="otro" type="radio" name="budget" id="budget-9" onclick="mostrarOtraCantidad();">
                     <label for="budget-9" id="label_otra_cantidad" class="formato_label2">
                       <span id="span_otra_cantidad" data-hover="Otra">Otra</span>
-                      <input style="display: none;" class="form-control" type="number" max="100000" min="10" name="caja_otra_cantidad" id="caja_otra_cantidad" onkeyup="comprobarCantidad();">
+                      <input style="display: none;" class="form-control" type="number" max="1000000" min="10" name="caja_otra_cantidad" id="caja_otra_cantidad" onkeyup="comprobarCantidad();">
                     </label>
                     <div class="mensajes rounded" id="mensajes_cantidad"></div>
                   </div>
@@ -262,37 +262,37 @@
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="nombre">Nombre:</label>
-            <input type="text" class="form-control" name="caja_nombre" id="nombre" onkeypress="ocultarMensajeNombre();">
+            <input type="text" class="form-control" name="nombre" id="nombre" onkeypress="ocultarMensajeNombre();">
             <div class="invalid-tooltip" id="tool_nombre">Ingresa tu nombre</div>
             <div class="mensajes rounded" id="mensajes_nombre"></div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="primer_apellido">Primer Apellido:</label>
-            <input type="text" class="form-control" name="caja_ap1" id="primer_apellido" onkeypress="ocultarMensajePrimerAp();">
+            <input type="text" class="form-control" name="primer_apellido" id="primer_apellido" onkeypress="ocultarMensajePrimerAp();">
             <div class="mensajes rounded" id="mensajes_primer_apellido"></div>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="segundo_apellido">Segundo Apellido:</label>
-            <input type="text" class="form-control" name="caja_ap2" id="segundo_apellido" onkeypress="ocultarMensajeSegundoAp();">
+            <input type="text" class="form-control" name="segundo_apellido" id="segundo_apellido" onkeypress="ocultarMensajeSegundoAp();">
             <div class="mensajes rounded" id="mensajes_segundo_apellido"></div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="telefono">Telefono</label>
-            <input type="tel" class="form-control" name="caja_telefono" id="telefono" onkeypress="ocultarMensajeTelefono();">
+            <input type="tel" class="form-control" name="telefono" id="telefono" onkeypress="ocultarMensajeTelefono();">
             <div class="mensajes rounded" id="mensajes_telefono"></div>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="email">Email:</label>
-            <input type="text" class="form-control" name="caja_email" id="email" onkeypress="ocultarMensajeCorreo();">
+            <input type="text" class="form-control" name="email" id="email" onkeypress="ocultarMensajeCorreo();">
             <div class="mensajes rounded" id="mensajes_correo"></div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="select_categoria">Categoria:</label>
-            <select class="custom-select mr-sm-2" name="select_categoria" id="select_categoria" onchange="mostrarOcultarFechaGraduacion();">
+            <select class="custom-select mr-sm-2" id="select_categoria" name="select_categoria" onchange="mostrarOcultarFechaGraduacion();">
               <option value = "" selected disabled> - Seleccionar una opcion - </option>
               <option value = "Estudiante">Estudiante</option>
               <option value = "Graduado">Graduado</option>
@@ -311,7 +311,8 @@
           </div>
         </div>
       </section>
-      <br><br>  
+      <br><br>
+
       <section id="datos_de_pago" class="pb-3 rounded shadow-lg">
         <div class="form-row justify-content-center">
           <h1 style="text-align: center;" class="titulos_responsive py-3">Datos de Pago</h1>
@@ -319,7 +320,7 @@
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="select_banco">Banco:</label>
-            <select class="custom-select mr-sm-2" id="select_banco" name="s_banco" onchange="ocultarMensajeBanco();">
+            <select class="custom-select mr-sm-2" id="select_banco" name="select_banco" onchange="ocultarMensajeBanco();">
               <option value="" disabled selected> - Seleccionar una opcion - </option>
               <option value="American Express">American Express</option>
               <option value="Banamex">Banamex</option>
@@ -339,13 +340,13 @@
               <option value="Inbursa">Inbursa</option>
               <option value="Nacional Financiera">Nacional Financiera</option>
               <option value="Santander">Santander</option>
-              <option value="Scotiabank">Scotiabank</option>
+              <option value="Scotiabank-">Scotiabank</option>
             </select>
             <div class="mensajes rounded" id="mensajes_banco">Selecciona una opcion</div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="select_metodo">Metodo de Pago:</label>
-            <select class="custom-select mr-sm-2" id="select_pago"  name="select_pago" onchange="ocultarMensajeMetodoPago();">
+            <select class="custom-select mr-sm-2" id="select_metodo_pago" name="select_metodo_pago" onchange="ocultarMensajeMetodoPago();">
               <option value="" selected disabled> - Seleccionar una opcion - </option>
               <option value="Tarjeta credito American Express">Tarjeta credito American Express</option>
               <option value="Tarjeta credito Visa">Tarjeta credito Visa</option>
@@ -353,7 +354,7 @@
               <option value="Tarjeta debito American Express">Tarjeta debito American Express</option>
               <option value="Tarjeta debito Visa">Tarjeta debito Visa</option>
               <option value="Tarjeta debito Mastercard">Tarjeta debito Mastercard</option></select>
-              <option value="Cuenta de Cheques">Cuenta de Cheques</option></select>
+              <option value="Cuenta de Cheques">Tarjeta debito Mastercard</option></select>
             </select>
             <div class="mensajes rounded" id="mensajes_metodo_pago">Selecciona una opcion</div>
           </div>
@@ -361,7 +362,7 @@
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
             <label for="numero_de_tarjeta">Numero de Tarjeta:</label>
-            <input type="text" class="form-control" name="numero_tarjeta" id="numero_tarjeta" onkeypress="ocultarMensajeNumTarjeta();">
+            <input type="text" class="form-control" name="numero_de_tarjeta" id="numero_de_tarjeta" onkeypress="ocultarMensajeNumTarjeta();">
             <div class="mensajes" id="mensajes_num_tarjeta"></div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4_5">
@@ -385,13 +386,22 @@
             <div class="mensajes rounded" id="mensajes_plazo">Selecciona una opcion</div>
           </div>
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mb-4" style="display: none;" id="espacio_plazos">
-            <label for="select_mensualidades">Cantidad de Plazos:</label>
+            <label for="select_banco">Cantidad de Plazos:</label>
             <select class="custom-select mr-sm-2" id="select_mensualidades" name="select_mensualidades" onchange="ocultarMensajeMensualidad();">
               <option value="" disabled selected> - Seleccionar una opcion - </option>
+              <option value="2">2 mensualidades</option>
               <option value="3">3 mensualidades</option>
+              <option value="4">4 mensualidades</option>
+              <option value="5">5 mensualidades</option>
               <option value="6">6 mensualidades</option>
+              <option value="7">7 mensualidades</option>
+              <option value="8">8 mensualidades</option>
               <option value="9">9 mensualidades</option>
+              <option value="10">10 mensualidades</option>
+              <option value="11">11 mensualidades</option>
               <option value="12">12 mensualidades</option>
+
+
             </select>
             <div class="mensajes rounded" id="mensajes_mensualidades">Selecciona una opcion</div>
           </div>
@@ -420,32 +430,32 @@
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-4 col-md-4 col-lg-6 col-xl-6 mb-4_5">
             <label for="calle">Calle:</label>
-            <input type="text" class="form-control" name="caja_calle" id="caja_calle" onkeypress="ocultarMensajeCalle();">
+            <input type="text" class="form-control" name="calle" id="calle" onkeypress="ocultarMensajeCalle();">
             <div class="mensajes rounded" id="mensajes_calle"></div>
           </div>
           <div class="form-group col-12 col-sm-4 col-md-4 col-lg-6 col-xl-6 mb-4_5">
             <label for="colonia">Colonia:</label>
-            <input type="text" class="form-control" name="caja_col" id="caja_col" onkeypress="ocultarMensajeColonia();">
+            <input type="text" class="form-control" name="colonia" id="colonia" onkeypress="ocultarMensajeColonia();">
             <div class="mensajes rounded" id="mensajes_colonia"></div>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-4 col-md-4 col-lg-6 col-xl-6 mb-4_5">
             <label for="municipio">Municipio</label>
-            <input type="text" class="form-control" name="caja_municipio" id="caja_municipio"
+            <input type="text" class="form-control" name="municipio" id="municipio"
             onkeypress="ocultarMensajeMunicipio();">
             <div class="mensajes rounded" id="mensajes_municipio"></div>
           </div>
           <div class="form-group col-12 col-sm-4 col-md-4 col-lg-6 col-xl-6 mb-4_5">
             <label for="cp">Codigo Postal</label>
-            <input type="text" class="form-control" name="caja_cp" id="caja_cp" onkeypress="ocultarMensajeCp();">
+            <input type="text" class="form-control" name="cp" id="cp" onkeypress="ocultarMensajeCp();">
             <div class="mensajes rounded" id="mensajes_cp"></div>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-4 col-md-4 col-lg-6 col-xl-6 mb-4_5">
             <label for="select_estado">Estado:</label>
-            <select class="custom-select mr-sm-2" id="select_estado" name="s_estate" onchange="ocultarMensajeEstado();">
+            <select class="custom-select mr-sm-2" id="select_estado" name="select_estado" onchange="ocultarMensajeEstado();">
               <option value = "" selected disabled> - Seleccionar Pais - </option>
             </select>
             <div class="mensajes rounded" id="mensajes_estado">Selecciona una opcion</div>
@@ -477,7 +487,7 @@
         <div class="form-row justify-content-center mb-5">
           <div class="g-recaptcha" data-sitekey="6LcvUXIjAAAAALIEWpqjJEcj7VFytXDpnvPdZvgT"></div>
         </div>
-        
+
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-10 col-xl-10 mb-3">
             <button type="submit" class="btn btn-primary btn-block">Enviar</button>
