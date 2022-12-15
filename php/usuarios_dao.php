@@ -28,7 +28,7 @@ class UsuarioDAO
     //----------------------------BAJAS-------------------------
     public function eliminarUsuario($id)
     {
-        $sql = "DELETE FROM users WHERE id ='$id'";
+        $sql = "DELETE FROM users WHERE iduser ='$id'";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
             echo "PERFECTO, CASI SOY ISC :)";
@@ -41,10 +41,10 @@ class UsuarioDAO
     //----------------------------CAMBIOS-------------------------
     public function cambioUsuario($id, $user, $email, $password)
     {
-        $sql = "UPDATE users SET user='$user', email='$email', password=$password WHERE id='$id'";
+        $sql = "UPDATE users SET username='$user', email='$email', passaword='$password' WHERE iduser='$id'";
 
         if (mysqli_query($this->conexion->getConexion(), $sql)) {
-            header("location:../vista/formulario_consultas.php");
+            header("location:../colectaubeta/dashboard/iduser.php");
         } else {;
             echo mysqli_error($this->conexion->getConexion());
         }

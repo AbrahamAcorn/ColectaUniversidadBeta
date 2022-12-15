@@ -406,12 +406,12 @@
                                                       <td>" . $fila['passaword'] . "</td>
                                                       <td>" . $fila['email'] . "</td>
                                                       <td>
-                                                      <a href='' class='btn btn-info' role='button'>Editar</a>
+                                                      <a href=modifica_user.php?ids=%s&us=%s&co=%s' class='btn btn-info' role='button'>Editar</a>
                                                       </td>
                                                       <td>
-                                                      <a href='' class='btn btn-danger' role='button'>Eliminar</a>
+                                                      <a href='../php/baja_user.php?id=%s' class='btn btn-danger' role='button'>Eliminar</a>
                                                       </td>
-                                                  </tr>", $fila['iduser']);
+                                                  </tr>", $fila['iduser'],$fila['username'],$fila['email'],$fila['iduser']);
                                           }
                                           ?>
 

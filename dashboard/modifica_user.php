@@ -26,31 +26,29 @@
                     <div class="card bg-dark text-white" style="border-radius: 1rem;">
                         <div class="card-body px-5 py-4 text-center">
                             <div class="mb-md-1 mt-md-1 pb-0">
-                                <h2 class="fw-bold mb-0 text-uppercase">Registrate</h2>
-                                <p class="text-white-50 mb-5">Ingresa un Usuario y Contraseña!</p>
+                                <h2 class="fw-bold mb-0 text-uppercase">Cambios Usuario</h2>
+                                <p class="text-white-50 mb-5">Cambia tu Usuario y Contraseña!</p>
                 
-                                <form method="POST" action="php/altas_usuarios.php">
+                                <form method="POST" action="../php/cambio_user.php">
+                                <input type="text" id="caja_ids" name="caja_ids" class="form-control form-control-lg" readonly value="<?php echo $_GET['ids']; ?>"> 
+                                        <label class="form-label" for="caja_id"> Identificador </label>
+
+
                                     <div class="form-outline form-white mb-4">
-                                        <input type="text" id="caja_user" name="caja_user" class="form-control form-control-lg"/>
+                                        <input type="text" id="caja_user" name="caja_user" class="form-control form-control-lg" value="<?php echo $_GET['us']; ?>">
                                         <label class="form-label" for="caja_user">Usuario</label>
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
-                                        <input type="email" id="caja_correo2" name="caja_correo2" class="form-control form-control-lg"/>
+                                        <input type="email" id="caja_correo2" name="caja_correo2" class="form-control form-control-lg" value="<?php echo $_GET['co']; ?>">
                                         <label class="form-label" for="caja_correo2">Mail</label>
-                                    </div>
-                    
-                    
-                                    <div class="form-outline form-white mb-0">
-                                        <input type="password" id="caja_psw" name="caja_psw" class="form-control form-control-lg" />
-                                        <label class="form-label" for="caja_psw">Crea una contraseña</label>
                                     </div>
 
                                     <div class="form-outline form-white mb-0">
-                                        <input type="password" id="caja_confirm" name="caja_confirm" class="form-control form-control-lg" />
-                                        <label class="form-label" for="caja_confirm">Repite tu contraseña</label>
+                                        <input type="password" id="caja_psw" name="caja_psw" class="form-control form-control-lg" />
+                                        <label class="form-label" for="caja_psw">Cambia tu contraseña</label>
                                     </div>
-                                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Registrarse</button>
+                                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Modificar</button>
                     
                                 </form>
                             <div>
