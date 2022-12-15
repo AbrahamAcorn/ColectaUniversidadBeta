@@ -138,14 +138,14 @@
                 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Agregar</span></a>
             </li>
 
               <!-- Nav Item - Tables -->
               <li class="nav-item active">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Buscar</span></a>
             </li>

@@ -15,19 +15,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Tarjetas</title>
+    <title>Direcciones</title>
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -75,11 +75,11 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reportes</h6>
-                        <a class="collapse-item" href="buttons.html">Anual</a>
-                        <a class="collapse-item" href="buttons.html">Mensual</a>
-                        <a class="collapse-item" href="buttons.html">Bimestral</a>
-                        <a class="collapse-item" href="cards.html">Semestral</a>
-                        <a class="collapse-item" href="cards.html">Semanall</a>
+                        <a class="collapse-item" href="">Anual</a>
+                        <a class="collapse-item" href="">Mensual</a>
+                        <a class="collapse-item" href="">Bimestral</a>
+                        <a class="collapse-item" href="">Semestral</a>
+                        <a class="collapse-item" href="">Semanall</a>
                     </div>
                 </div>
             </li>
@@ -95,16 +95,16 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Circulos</h6>
-                        <a class="collapse-item" href="utilities-color.html">Nivel 1</a>
-                        <a class="collapse-item" href="utilities-border.html">Nivel 2</a>
-                        <a class="collapse-item" href="utilities-animation.html">Nivel 3</a>
-                        <a class="collapse-item" href="utilities-other.html">Nivel 4</a>
+                        <a class="collapse-item" href="">Nivel 1</a>
+                        <a class="collapse-item" href="">Nivel 2</a>
+                        <a class="collapse-item" href="">Nivel 3</a>
+                        <a class="collapse-item" href="">Nivel 4</a>
                         <h6 class="collapse-header">Tipo</h6>
-                        <a class="collapse-item" href="utilities-color.html">Graduados</a>
-                        <a class="collapse-item" href="utilities-border.html">Trabajadores</a>
-                        <a class="collapse-item" href="utilities-animation.html">Estudiantes</a>
-                        <a class="collapse-item" href="utilities-other.html">Padres de familia</a>
-                        <a class="collapse-item" href="utilities-other.html">Otros</a>
+                        <a class="collapse-item" href="">Graduados</a>
+                        <a class="collapse-item" href="">Trabajadores</a>
+                        <a class="collapse-item" href="">Estudiantes</a>
+                        <a class="collapse-item" href="">Padres de familia</a>
+                        <a class="collapse-item" href="">Otros</a>
                     </div>
                 </div>
             </li>
@@ -124,7 +124,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Graficos</span></a>
             </li>
@@ -138,14 +138,14 @@
                 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Agregar</span></a>
             </li>
 
               <!-- Nav Item - Tables -->
               <li class="nav-item active">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="tarjetas.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Buscar</span></a>
             </li>
@@ -284,7 +284,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                        <img class="rounded-circle" src="../assets/img/undraw_profile_1.svg" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -295,7 +295,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                        <img class="rounded-circle" src="../assets/img/undraw_profile_2.svg" alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -306,7 +306,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                                        <img class="rounded-circle" src="../assets/img/undraw_profile_3.svg" alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -340,7 +340,7 @@
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php
                                 echo($_SESSION['usuario'])
                                 ?></span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="../assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -374,7 +374,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tarjetas</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Direcciones</h1>
                     
 
                     <div class="card shadow mb-4">
@@ -413,10 +413,10 @@
                                                       <td>" . $fila['pais'] . "</td>
                                                       <td>" . $fila['cp'] . "</td>
                                                       <td>
-                                                      <a href='vistas/cambios.html' class='btn btn-info' role='button'>Editar</a>
+                                                      <a href='' class='btn btn-info' role='button'>Editar</a>
                                                       </td>
                                                       <td>
-                                                      <a href='../php/baja_direcc.php?id=%s' class='btn btn-danger' role='button'>Eliminar</a>
+                                                      <a href='' class='btn btn-danger' role='button'>Eliminar</a>
                                                       </td>
                                                   </tr>", $fila['iddirecciones']);
                                           }
@@ -466,31 +466,31 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Al seleccionar "Logout" Terminara la sesion</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="../php/cerrar_sesion.php">Logout</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="../assets/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="../assets/js/demo/datatables-demo.js"></script>
 
 </body>
 
