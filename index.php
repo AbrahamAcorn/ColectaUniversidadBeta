@@ -483,10 +483,11 @@
             </div>
           </div>
         </div>
-
+        
         <div class="form-row justify-content-center mb-5">
           <div class="g-recaptcha" data-sitekey="6LcvUXIjAAAAALIEWpqjJEcj7VFytXDpnvPdZvgT"></div>
         </div>
+
 
         <div class="form-row justify-content-center">
           <div class="form-group col-12 col-sm-10 col-md-8 col-lg-10 col-xl-10 mb-3">

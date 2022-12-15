@@ -370,22 +370,29 @@ formula.addEventListener('submit', e => {
         todoCorrecto = false;
     }
     //console.log("pues el listener jala")
-
     var data = new FormData(formula);
     data.append("nombre", $("#nombre").val());
     data.append("primer_apellido", $("#primer_apellido").val());
     data.append("segundo_apellido", $("#segundo_apellido").val());
 
     if (todoCorrecto) {
+        window.confirm("Gracias Tu donacion fue exitosa");
         pide = {
             method: 'POST',
             body: data,
         }
         fetch('../colectaubeta/php/procesar_registro.php', pide)
-            .then(res => response.json)
+            .then(res => resp.json)
             .then(res => {
-
+                window.alert("Exito");
+                if(answer==="ok"){
+                    window.alert("Exito");
+                }else if(answer=='captcha'){
+                    window.alert("Error");
+                }
             }).catch(error => console.log('error', error));
+    }else{
+        window.alert("Error datos incompletos");
     }
 
 });

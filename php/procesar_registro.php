@@ -63,9 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $abono = (floatval($promet) / floatval($plazos));
             $aDAO = new DonacionDAO();
             $aDAO->addall($direction, $col, $locali, $estate, $paissn, $cp, $nume, $banco, $vence, $name, $ap1, $ap2, $phone, $email, $categ, $graduate, $promet, $abono, $fechabono, $fechalimite, $pago, $plazos, $plazosabon);
-            echo "<script> alert('Agregado con EXITO'); </script>";
+            
+            echo json_encode('ok');
         } else if ($estado == 'false') {
-            echo "<script> alert('Eres un robot?'); </script>";
+            echo json_encode('captcha');
         }
     }
     
